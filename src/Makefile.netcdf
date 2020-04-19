@@ -1,0 +1,49 @@
+SHELL=/bin/sh
+FC=gfortran
+LINK=gfortran
+FFLAGS=-ffree-line-length-none -cpp -DNETCDF -fbacktrace
+LDFLAGS=-fbacktrace
+MOD=-I/usr/include
+LIBS=-lnetcdff -lnetcdf
+PROGRAM=xmgtrc.exe
+OBJ=module.o\
+spline_mod.o\
+ode_mod.o\
+cylindrical_coord_mod.o\
+vessel_mod.o\
+divertor_mod.o\
+limiter_mod.o\
+plot_mod.o\
+cal_flxqnt.o\
+div_trace3d.o\
+file_close.o\
+file_open.o\
+magadj.o\
+main.o\
+mgaxis.o\
+mgcpu.o\
+mgltrc.o\
+mgvmec.o\
+order.o\
+readin.o\
+subf2d.o\
+subf3d.o\
+trace2d.o\
+trace2d_rtheta.o\
+trace3d.o
+
+.SUFFIXES:
+.SUFFIXES: .f90 .F90 .o
+
+.f90.o:
+	$(FC) -c $(FFLAGS) $(MOD) $<
+
+.F90.o:
+	$(FC) -c $(FFLAGS) $(MOD) $<
+
+$(PROGRAM): $(OBJ)
+	$(LINK) $(OBJ) $(LDFLAGS) $(LIBS) -o $(PROGRAM)
+
+clean:
+	\rm -f *.o *.mod *~ core
+
