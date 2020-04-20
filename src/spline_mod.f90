@@ -8,7 +8,33 @@
 !
 ! DESCRIPTION:
 !> @brief
-!>
+!> 4th order 3-dimensional Spline interpolation
+!
+!> @details
+!> This module was written by Yasuhiro Suzuki at National Institute for Fusion Science ( NIFS )
+!! 2010/12/12. \n
+!! Based program is wrtten by T.Watanabe at NIFS
+!! 1990/8/29 \n
+!! Reference "Multi-Dimension Highly Accurate Spline Interpolation Method"
+!! by T.Watanabe The Japan Society for Industrial and Applied Mathmatics \n
+!! DOI:10.11540/jsiamt.1.1_101 \n
+!!
+!! This module contains following public routines. \n
+!! 1. splin1 : Initializing 1-dimensional interpolation. \n
+!! 2. splin2 : Initializing 2-dimensional interpolation. \n
+!! 3. splin3 : Initializing 3-dimensional interpolation. \n
+!! 4. sp1df  : 1-dimensional interpolation. \n
+!! 5. sp1dd  : 1-dimensional interpolation and derivation along X. \n
+!! 6. sp2df  : 2-dimensional interpolation. \n
+!! 7. sp2dd  : 2-dimensional interpolation and derivation along X and Y. \n
+!! 8. sp3df  : 3-dimensional interpolation. \n
+!! 9. sp3dd  : 3-dimensional interpolation and derivation along X, Y and Z.
+!
+!              xsc                          xlc
+!               <------------- x ------------>
+!     -2--+--+--1-------------------------nxxm-+--+--nxxm+2  a(i)
+!      +--------+----------------------------+---------+
+!               <---------------------------->
 !
 ! REVISION HISTORY:
 !> @date 19 Apr 2020
@@ -16,59 +42,6 @@
 !> @version Initial Version
 !
 !------------------------------------------------------------------------------
-!=spline_mod.f90
-!
-!==Version
-!
-! $Revision: $
-! $Id: $
-!
-!==Overview
-!
-!    This subroutine is written by Yasuhiro Suzuki
-!        at National Institute for Fusion Science ( NIFS )
-!         2010/12/12
-!
-!    Based program is wrtten by T.Watanabe
-!        at NIFS
-!         1990/8/29
-!
-!  Multi-Dimensional Spline Interpolation  ( 4th )
-!
-!  This module contains following public routines.
-!
-!   1. splin1 : Initializing 1-dimensional interpolation.
-!   2. splin2 : Initializing 2-dimensional interpolation.
-!   3. splin3 : Initializing 3-dimensional interpolation.
-!   4. sp1df  : 1-dimensional interpolation. 
-!   5. sp1dd  : 1-dimensional interpolation and derivation along X. 
-!   6. sp2df  : 2-dimensional interpolation. 
-!   7. sp2dd  : 2-dimensional interpolation and derivation along X and Y.
-!   8. sp3df  : 3-dimensional interpolation.
-!   9. sp3dd  : 3-dimensional interpolation and derivation along X, Y and Z.
-!
-!
-!              xsc                          xlc
-!               <------------- x ------------>
-!      1--+--+--4-------------------------nxxm-3-+--+--nxxm  a(i)
-!      +--------+----------------------------+---------+
-!               <---------------------------->
-!
-!
-!
-!==Reference
-!
-!  "Multi-Dimension Highly Accurate Spline Interpolation Method"
-!  by T.Watanabe  The Japan Society for Industrial and Applied Mathmatics
-!
-!==Error Handlings
-!
-!==Known Bugs
-!
-!==Note
-!
-!==TODO
-!
 MODULE spline_mod
 
   IMPLICIT NONE
