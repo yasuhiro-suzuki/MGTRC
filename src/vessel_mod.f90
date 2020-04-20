@@ -1,35 +1,21 @@
-!=vessel_mod.f90
+!> @file vessel_mod.f90
+!------------------------------------------------------------------------------
 !
-!==Version
+! MODULE: vessel_mod
 !
-! $Revision: $
-! $Id: $
+!> @author
+!> Yasuhiro Suzuki, National Institute for Fusion Science
 !
-!==Overview
+! DESCRIPTION:
+!> @brief
+!>
 !
-! SUBROUTINE for vacuum vessel
+! REVISION HISTORY:
+!> @date 19 Apr 2020
 !
-!==Reference
+!> @version Initial Version
 !
-! None
-!
-!==Error Handlings
-!
-! None
-!
-!==Known Bugs
-!
-! None
-!
-!==Note
-!
-! None
-!
-!==TODO
-!
-! None
-!
-
+!------------------------------------------------------------------------------
 MODULE vessel_mod
 
   USE kind_spec

@@ -1,22 +1,21 @@
-!=mgcpu.f90
+!> @file mgcpu.f90
+!------------------------------------------------------------------------------
 !
-!==Version
+! SUBROUITNE: mgcpu
 !
-! $Revision: $
-! $Id: $
+!> @author
+!> Yasuhiro Suzuki, National Institute for Fusion Science
 !
-!==Overview
+! DESCRIPTION:
+!> @brief
+!>
 !
-!==Reference
+! REVISION HISTORY:
+!> @date 19 Apr 2020
 !
-!==Error Handlings
+!> @version Initial Version
 !
-!==Known Bugs
-!
-!==Note
-!
-!==TODO
-!
+!------------------------------------------------------------------------------
 SUBROUTINE mgcpu (itime, mess & ! (in)
   &              )
 

@@ -1,35 +1,21 @@
-!=limiter_mod.f90
+!> @file limiter_mod.f90
+!------------------------------------------------------------------------------
 !
-!==Version
+! MODULE: limiter_mod
 !
-! $Revision: $
-! $Id: $
+!> @author
+!> Yasuhiro Suzuki, National Institute for Fusion Science
 !
-!==Overview
+! DESCRIPTION:
+!> @brief
+!>
 !
-! SUBROUTINE for limiter
+! REVISION HISTORY:
+!> @date 19 Apr 2020
 !
-!==Reference
+!> @version Initial Version
 !
-! None
-!
-!==Error Handlings
-!
-! None
-!
-!==Known Bugs
-!
-! None
-!
-!==Note
-!
-! None
-!
-!==TODO
-!
-! None
-!
-
+!------------------------------------------------------------------------------
 MODULE limiter_mod
 
   USE kind_spec

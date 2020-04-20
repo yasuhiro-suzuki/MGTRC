@@ -1,22 +1,21 @@
-!=cylindrical_coord_mod.f90
+!> @file cylindrical_coord_mod.f90
+!------------------------------------------------------------------------------
 !
-!==Version
+! MODULE: cylindrical_coord_mod
 !
-! $Revision: $
-! $Id: $
+!> @author
+!> Yasuhiro Suzuki, National Institute for Fusion Science
 !
-!==Overview
+! DESCRIPTION:
+!> @brief
+!>
 !
-!==Reference
+! REVISION HISTORY:
+!> @date 19 Apr 2020
 !
-!==Error Handlings
+!> @version Initial Version
 !
-!==Known Bugs
-!
-!==Note
-!
-!==TODO
-!
+!------------------------------------------------------------------------------
 MODULE cylindrical_coord_mod
 
   USE kind_spec

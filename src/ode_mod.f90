@@ -1,45 +1,21 @@
-!=ode_mod.f90
+!> @file ode_mod.f90
+!------------------------------------------------------------------------------
 !
-!==Version
+! MODULE: ode_mod
 !
-! $Revision: $
-! $Id: $
+!> @author
+!> Yasuhiro Suzuki, National Institute for Fusion Science
 !
-!==Overview
+! DESCRIPTION:
+!> @brief
+!>
 !
-!    This SUBROUTINE is written by Y. Suzuki 
-!        at Graduate School of Energy Science (Kyoto Univ)
-!         2002/12/28
+! REVISION HISTORY:
+!> @date 19 Apr 2020
 !
-!    Based program is wrtten by K. Hamamatsu  
-!        at Faculty of Science (Hiroshima Univ.)
-!          1980/12/18
+!> @version Initial Version
 !
-!  Runge-Kutta-Huta Formulas  ( Sixth order 8-stage )
-!
-!  y0(n)    REAL*8       initial value of y  ( start point )
-!  n        INTEGER*4    dimension of defferential equation
-!  h        REAL*8       step size
-!  f(n,nl)  REAL*8       work aray for calculation ( nl >= 9 )
-!  y(n)     REAL*8       END point  ( IF j=1, y(n)=y0(n) )
-!  nx       INTEGER*4    final value of x is h*(nx-1) ( END point )
-!  icount   INTEGER*4    END step
-!  iout     INTEGER*4    flag of calculation
-!
-!==Reference
-!
-!  " Improved Sixth-order Runge-kutta formulas and Approximate
-!    Continuous Solution of Ordinary DIFferential Equation "
-!  by D. Sarafyan:  J. Math. Anal. Appl. 40, 436-455 (1972)
-!
-!==Error Handlings
-!
-!==Known Bugs
-!
-!==Note
-!
-!==TODO
-!
+!------------------------------------------------------------------------------
 MODULE ode_mod
 
   USE kind_spec

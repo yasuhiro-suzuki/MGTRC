@@ -1,22 +1,21 @@
-!=mgaxis.f90
+!> @file mgaxis.f90
+!------------------------------------------------------------------------------
 !
-!==Version
+! SUBROUITNE: mgaxis
 !
-! $Revision: $
-! $Id: $
+!> @author
+!> Yasuhiro Suzuki, National Institute for Fusion Science
 !
-!==Overview
+! DESCRIPTION:
+!> @brief
+!>
 !
-!==Reference
+! REVISION HISTORY:
+!> @date 19 Apr 2020
 !
-!==Error Handlings
+!> @version Initial Version
 !
-!==Known Bugs
-!
-!==Note
-!
-!==TODO
-!
+!------------------------------------------------------------------------------
 SUBROUTINE mgaxis
 
   USE kind_spec

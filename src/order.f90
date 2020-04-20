@@ -1,23 +1,21 @@
-!=order.f90
+!> @file order.f90
+!------------------------------------------------------------------------------
 !
-!==Version
+! SUBROUITNE: order
 !
-! $Revision: $
-! $Id: $
+!> @author
+!> Yasuhiro Suzuki, National Institute for Fusion Science
 !
-!==Overview
+! DESCRIPTION:
+!> @brief
+!>
 !
-!==Reference
+! REVISION HISTORY:
+!> @date 19 Apr 2020
 !
-!==Error Handlings
+!> @version Initial Version
 !
-!==Known Bugs
-!
-!==Note
-!
-!==TODO
-!
-
+!------------------------------------------------------------------------------
 SUBROUTINE order (mplot,       & !(in)
   &               rval, zval,  & !(inout)
   &               raxis, zaxis & !(in)

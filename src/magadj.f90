@@ -1,3 +1,21 @@
+!> @file magadj.f90
+!------------------------------------------------------------------------------
+!
+! SUBROUITNE: magadj
+!
+!> @author
+!> Yasuhiro Suzuki, National Institute for Fusion Science
+!
+! DESCRIPTION:
+!> @brief
+!>
+!
+! REVISION HISTORY:
+!> @date 19 Apr 2020
+!
+!> @version Initial Version
+!
+!------------------------------------------------------------------------------
 SUBROUTINE magadj
 
   USE kind_spec

@@ -1,3 +1,21 @@
+!> @file divertor_mod.f90
+!------------------------------------------------------------------------------
+!
+! MODULE: divertor_mod
+!
+!> @author
+!> Yasuhiro Suzuki, National Institute for Fusion Science
+!
+! DESCRIPTION:
+!> @brief
+!>
+!
+! REVISION HISTORY:
+!> @date 19 Apr 2020
+!
+!> @version Initial Version
+!
+!------------------------------------------------------------------------------
 MODULE divertor_mod
 
   USE kind_spec

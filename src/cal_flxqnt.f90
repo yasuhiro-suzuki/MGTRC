@@ -1,22 +1,21 @@
-!=cal_avr2d.f90
+!> @file cal_flxqnt.f90
+!------------------------------------------------------------------------------
 !
-!==Version
+! SUBROUITNE: cal_flxqnt
 !
-! $Revision: $
-! $Id: $
+!> @author
+!> Yasuhiro Suzuki, National Institute for Fusion Science
 !
-!==Overview
+! DESCRIPTION:
+!> @brief
+!! This subroutine calculates flux surface quantities by the field line tracing.
 !
-!==Reference
+! REVISION HISTORY:
+!> @date 19 Apr 2020
 !
-!==Error Handlings
+!> @version Initial Version
 !
-!==Known Bugs
-!
-!==Note
-!
-!==TODO
-!
+!------------------------------------------------------------------------------
 SUBROUTINE cal_flxqnt
 
   USE kind_spec
@@ -27,7 +26,6 @@ SUBROUTINE cal_flxqnt
     &                               c14
   USE fline_mod,             ONLY : def_start,         &
     &                               lfigout,           &
-    &                               ltext,             &
     &                               mr,                &
     &                               mcirc,             &
     &                               nstep,             &
@@ -578,11 +576,9 @@ SUBROUTINE cal_flxqnt
     PRINT fmt, js, iout(js), ss(js), rav1(js), rav2(js), phit(js), psip(js), iota1(js), iota2(js), vp(js), volume(js), (vp(0)-vp(js))/vp(0), lc(js)
   END DO loop0060
 
-  IF(ltext)THEN
-    DO js=0,mr
-      WRITE(60,'(20(ES15.7,A1))') f0(js,1), ',', f0(js,2), ',', rav1(js), ',', phit(js), ',', iota1(js), ',', iota2(js), ',', (vp(0) - vp(js)) / vp(0), ',', lc(js), ','
-    END DO
-  END IF
+  DO js=0,mr
+    WRITE(60,'(20(ES15.7,A1))') f0(js,1), ',', f0(js,2), ',', rav1(js), ',', phit(js), ',', iota1(js), ',', iota2(js), ',', (vp(0) - vp(js)) / vp(0), ',', lc(js), ','
+  END DO
 
   IF(lfigout)THEN
 

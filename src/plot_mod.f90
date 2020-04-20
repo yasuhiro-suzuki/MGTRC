@@ -1,36 +1,21 @@
-!=plot_mod.f90
+!> @file plot_mod.f90
+!------------------------------------------------------------------------------
 !
-!==Version
+! MODULE: plot_mod
 !
-! $Revision: $
-! $Id: $
+!> @author
+!> Yasuhiro Suzuki, National Institute for Fusion Science
 !
-!==Overview
+! DESCRIPTION:
+!> @brief
+!>
 !
-! SUBROUTINES for plotting
+! REVISION HISTORY:
+!> @date 19 Apr 2020
 !
-!==Reference
+!> @version Initial Version
 !
-! None
-!
-!==Error Handlings
-!
-! None
-!
-!==Known Bugs
-!
-! None
-!
-!==Note
-!
-! These routines are coded based on the PLPLOT Graphic Libarry
-! see plplot.sourceforge.net
-!
-!==TODO
-!
-! None
-!
-
+!------------------------------------------------------------------------------
 MODULE plot_mod
 
   USE kind_spec

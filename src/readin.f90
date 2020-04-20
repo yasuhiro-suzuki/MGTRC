@@ -1,35 +1,21 @@
-!=readin.f90
+!> @file readin.f90
+!------------------------------------------------------------------------------
 !
-!==Version
+! SUBROUITNE: readin
 !
-! $Revision: $
-! $Id: $
+!> @author
+!> Yasuhiro Suzuki, National Institute for Fusion Science
 !
-!==Overview
+! DESCRIPTION:
+!> @brief
+!>
 !
-! SUBROUTINE for namelist input
+! REVISION HISTORY:
+!> @date 19 Apr 2020
 !
-!==Reference
+!> @version Initial Version
 !
-! None
-!
-!==Error Handlings
-!
-! None
-!
-!==Known Bugs
-!
-! None
-!
-!==Note
-!
-! None
-!
-!==TODO
-!
-! None
-!
-
+!------------------------------------------------------------------------------
 SUBROUTINE readin
 
   USE kind_spec
@@ -54,7 +40,6 @@ SUBROUTINE readin
     &                               lupdown,        &
     &                               lflxqnt,        &
     &                               lpoin,          &
-    &                               ltext,          &
     &                               lfigout,        &
     &                               lcontb,         &
     &                               mr,             &
@@ -105,7 +90,6 @@ SUBROUTINE readin
     &               mode,           &
     &               def_start,      &
     &               plot_file_name, &
-    &               ltext,          &
     &               lvessel,        &
     &               lcheck_vessel,  &
     &               lvessel_vtk,    &
@@ -113,7 +97,6 @@ SUBROUTINE readin
     &               llimiter,       &
     &               ldivertor,      &
     &               lflxqnt,        &
-    &               ltext,          &
     &               mr,             &
     &               h_in,           &
     &               lc_in,          &

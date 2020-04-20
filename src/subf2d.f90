@@ -1,22 +1,21 @@
-!=subf2d.f90
+!> @file subf2d.f90
+!------------------------------------------------------------------------------
 !
-!==Version
+! SUBROUITNE: subf2d
 !
-! $Revision: $
-! $Id: $
+!> @author
+!> Yasuhiro Suzuki, National Institute for Fusion Science
 !
-!==Overview
+! DESCRIPTION:
+!> @brief
+!>
 !
-!==Reference
+! REVISION HISTORY:
+!> @date 19 Apr 2020
 !
-!==Error Handlings
+!> @version Initial Version
 !
-!==Known Bugs
-!
-!==Note
-!
-!==TODO
-!
+!------------------------------------------------------------------------------
 SUBROUTINE subf2d (t, x,    &
   &                xp, iout &
   &               )

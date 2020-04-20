@@ -1,22 +1,21 @@
-!=mgvmec.f90
+!> @file mgvmec.f90
+!------------------------------------------------------------------------------
 !
-!==Version
+! SUBROUITNE: mgvmec
 !
-! $Revision: $
-! $Id: $
+!> @author
+!> Yasuhiro Suzuki, National Institute for Fusion Science
 !
-!==Overview
+! DESCRIPTION:
+!> @brief
+!>
 !
-!==Reference
+! REVISION HISTORY:
+!> @date 19 Apr 2020
 !
-!==Error Handlings
+!> @version Initial Version
 !
-!==Known Bugs
-!
-!==Note
-!
-!==TODO
-!
+!------------------------------------------------------------------------------
 SUBROUTINE mgvmec
 
   USE kind_spec

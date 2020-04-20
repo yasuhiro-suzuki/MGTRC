@@ -1,3 +1,21 @@
+!> @file spline_mod.f90
+!------------------------------------------------------------------------------
+!
+! MODULE: spline_mod
+!
+!> @author
+!> Yasuhiro Suzuki, National Institute for Fusion Science
+!
+! DESCRIPTION:
+!> @brief
+!>
+!
+! REVISION HISTORY:
+!> @date 19 Apr 2020
+!
+!> @version Initial Version
+!
+!------------------------------------------------------------------------------
 !=spline_mod.f90
 !
 !==Version

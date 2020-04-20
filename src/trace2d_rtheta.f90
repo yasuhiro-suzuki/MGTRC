@@ -1,22 +1,21 @@
-!=trace2d_rtheta.f90
+!> @file trace2d_rtheta.f90
+!------------------------------------------------------------------------------
 !
-!==Version
+! SUBROUITNE: trace2d_rtheta
 !
-! $Revision: $
-! $Id: $
+!> @author
+!> Yasuhiro Suzuki, National Institute for Fusion Science
 !
-!==Overview
+! DESCRIPTION:
+!> @brief
+!>
 !
-!==Reference
+! REVISION HISTORY:
+!> @date 19 Apr 2020
 !
-!==Error Handlings
+!> @version Initial Version
 !
-!==Known Bugs
-!
-!==Note
-!
-!==TODO
-!
+!------------------------------------------------------------------------------
 SUBROUTINE trace2d_rtheta
 
   USE kind_spec

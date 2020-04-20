@@ -1,22 +1,21 @@
-!=mgltrc.f90
+!> @file mgltrc.f90
+!------------------------------------------------------------------------------
 !
-!==Version
+! SUBROUITNE: mgltrc
 !
-! $Revision: $
-! $Id: $
+!> @author
+!> Yasuhiro Suzuki, National Institute for Fusion Science
 !
-!==Overview
+! DESCRIPTION:
+!> @brief
+!>
 !
-!==Reference
+! REVISION HISTORY:
+!> @date 19 Apr 2020
 !
-!==Error Handlings
+!> @version Initial Version
 !
-!==Known Bugs
-!
-!==Note
-!
-!==TODO
-!
+!------------------------------------------------------------------------------
 SUBROUTINE mgltrc
 
   USE fline_mod,    ONLY : mode,             &

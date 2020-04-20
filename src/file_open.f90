@@ -1,3 +1,21 @@
+!> @file file_open.f90
+!------------------------------------------------------------------------------
+!
+! SUBROUITNE: file_open
+!
+!> @author
+!> Yasuhiro Suzuki, National Institute for Fusion Science
+!
+! DESCRIPTION:
+!> @brief
+!>
+!
+! REVISION HISTORY:
+!> @date 19 Apr 2020
+!
+!> @version Initial Version
+!
+!------------------------------------------------------------------------------
 !=file_open.f90
 !
 !==Version
@@ -39,7 +57,7 @@
 
 SUBROUTINE file_open
 
-  USE fline_mod,             ONLY : ltext
+  USE fline_mod,             ONLY : lflxqnt
   USE file_mod,              ONLY : plot_file_name, &
 #ifdef POINXY
     &                               xy_plot_file,   &
@@ -79,7 +97,7 @@ SUBROUTINE file_open
     OPEN(30, FILE=vessel_file, FORM='formatted', STATUS='unknown')
   END IF
  
-  IF(ltext)THEN
+  IF(lflxqnt)THEN
     IF(prof_file == '') prof_file =  TRIM(plot_file_name) // '.prof'
     OPEN(60, FILE=prof_file, FORM='formatted', STATUS='unknown')
   END IF

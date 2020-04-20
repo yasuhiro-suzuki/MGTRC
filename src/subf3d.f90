@@ -1,22 +1,21 @@
-!=subf3d.f90
+!> @file subf3d.f90
+!------------------------------------------------------------------------------
 !
-!==Version
+! SUBROUITNE: subf3d
 !
-! $Revision: $
-! $Id: $
+!> @author
+!> Yasuhiro Suzuki, National Institute for Fusion Science
 !
-!==Overview
+! DESCRIPTION:
+!> @brief
+!>
 !
-!==Reference
+! REVISION HISTORY:
+!> @date 19 Apr 2020
 !
-!==Error Handlings
+!> @version Initial Version
 !
-!==Known Bugs
-!
-!==Note
-!
-!==TODO
-!
+!------------------------------------------------------------------------------
 SUBROUTINE subf3d ( t, x,    & !(in)
   &                 xp, iout & !(out)
   &               )

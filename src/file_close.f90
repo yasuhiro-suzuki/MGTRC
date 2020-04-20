@@ -1,3 +1,21 @@
+!> @file file_close.f90
+!------------------------------------------------------------------------------
+!
+! SUBROUITNE: file_close
+!
+!> @author
+!> Yasuhiro Suzuki, National Institute for Fusion Science
+!
+! DESCRIPTION:
+!> @brief
+!>
+!
+! REVISION HISTORY:
+!> @date 19 Apr 2020
+!
+!> @version Initial Version
+!
+!------------------------------------------------------------------------------
 !=file_close.f90
 !
 !==Version
@@ -38,7 +56,7 @@
 
 SUBROUTINE file_close
 
-  USE fline_mod,             ONLY : ltext
+  USE fline_mod,             ONLY : lflxqnt
   USE file_mod,              ONLY : plot_file_name, &
 #ifdef POINXY
     &                               xy_plot_file,   &
@@ -58,7 +76,7 @@ SUBROUTINE file_close
 
   IF(lflux) CLOSE(26)
 
-  IF(ltext) CLOSE(60)
+  IF(lflxqnt) CLOSE(60)
 
 #ifdef POINXY
   CLOSE(51)

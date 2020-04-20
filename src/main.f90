@@ -1,22 +1,23 @@
-!=main.f90
+!> @file main.f90
+!------------------------------------------------------------------------------
+! MGTRC Code
+!------------------------------------------------------------------------------
 !
-!==Version
+! PROGRAM: main.f90
 !
-! $Revision: $
-! $Id: $
+!> @author
+!> Yasuhiro Suzuki, National Institute for Fusion Science
 !
-!==Overview
+! DESCRIPTION:
+!> @brief
+!> Main driver of code.
 !
-!==Reference
+! REVISION HISTORY:
+!> @date 19 Apr 2020
 !
-!==Error Handlings
+!> @version Initial Version
 !
-!==Known Bugs
-!
-!==Note
-!
-!==TODO
-!
+!------------------------------------------------------------------------------
 PROGRAM MGTRC
 
   USE param1,                ONLY : ver_info
