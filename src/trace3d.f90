@@ -8,7 +8,15 @@
 !
 ! DESCRIPTION:
 !> @brief
-!>
+!> This routine traces the field line along the integral variable, \f$ l \f$.
+!
+!> @details
+!> This routine integrates an equation of the field lien as follows,
+!> \f{eqnarray}{
+!>  \frac{d R}{dl}    &=& \frac{B_R}{B} \\
+!>  \frac{d \phi}{dl} &=& \frac{B_{\phi}}{RB} \\
+!>  \frac{d Z}{dl}    &=& \frac{B_Z}{B}
+!> \f}
 !
 ! REVISION HISTORY:
 !> @date 19 Apr 2020

@@ -8,37 +8,37 @@
 !
 ! DESCRIPTION:
 !> @brief
-!> 4th order 3-dimensional Spline interpolation
+!> 4th order 3D Spline interpolation
+!
+!> @note Based program was wrtten by T.Watanabe at NIFS 1990/8/29
+!> @note Reference "Multi-Dimension Highly Accurate Spline Interpolation Method" (in Japanese)
+!!       by Tsuguhiro Watanabe The Japan Society for Industrial and Applied Mathmatics
+!> @note DOI:10.11540/jsiamt.1.1_101
 !
 !> @details
-!> This module was written by Yasuhiro Suzuki at National Institute for Fusion Science ( NIFS )
-!! 2010/12/12. \n
-!! Based program is wrtten by T.Watanabe at NIFS
-!! 1990/8/29 \n
-!! Reference "Multi-Dimension Highly Accurate Spline Interpolation Method"
-!! by T.Watanabe The Japan Society for Industrial and Applied Mathmatics \n
-!! DOI:10.11540/jsiamt.1.1_101 \n
-!!
-!! This module contains following public routines. \n
-!! 1. splin1 : Initializing 1-dimensional interpolation. \n
-!! 2. splin2 : Initializing 2-dimensional interpolation. \n
-!! 3. splin3 : Initializing 3-dimensional interpolation. \n
-!! 4. sp1df  : 1-dimensional interpolation. \n
-!! 5. sp1dd  : 1-dimensional interpolation and derivation along X. \n
-!! 6. sp2df  : 2-dimensional interpolation. \n
-!! 7. sp2dd  : 2-dimensional interpolation and derivation along X and Y. \n
-!! 8. sp3df  : 3-dimensional interpolation. \n
-!! 9. sp3dd  : 3-dimensional interpolation and derivation along X, Y and Z.
+!> This module contains following public routines.
 !
-!              xsc                          xlc
+!> @li 1. splin1 : Initializing 1-dimensional interpolation.
+!> @li 2. splin2 : Initializing 2-dimensional interpolation.
+!> @li 3. splin3 : Initializing 3-dimensional interpolation.
+!> @li 4. sp1df  : 1-dimensional interpolation.
+!> @li 5. sp1dd  : 1-dimensional interpolation and derivation along X.
+!> @li 6. sp2df  : 2-dimensional interpolation.
+!> @li 7. sp2dd  : 2-dimensional interpolation and derivation along X, and Y.
+!> @li 8. sp3df  : 3-dimensional interpolation.
+!> @li 9. sp3dd  : 3-dimensional interpolation and derivation along X, Y, and Z.
+!
+!              xsd                          xld
 !               <------------- x ------------>
-!     -2--+--+--1-------------------------nxxm-+--+--nxxm+2  a(i)
+!     -2--+--+--1-------------------------nx1d-+--+--nx1d+2  a(i)
 !      +--------+----------------------------+---------+
 !               <---------------------------->
 !
 ! REVISION HISTORY:
 !> @date 19 Apr 2020
+!> @date 12 Dec 2010
 !
+!> @version add documents by Doxygen
 !> @version Initial Version
 !
 !------------------------------------------------------------------------------
@@ -50,15 +50,15 @@ MODULE spline_mod
 
   INTEGER, PARAMETER :: DP =  SELECTED_REAL_KIND(15)
 
-  INTEGER :: l1d =  1, &
-    &        l2d =  1, &
-    &        l3d =  3, &
-    &        nx1d,     &
-    &        nx2d,     &
-    &        ny2d,     &
-    &        nx3d,     &
-    &        ny3d,     &
-    &        nz3d
+  INTEGER :: l1d =  1, & !< rank of 1D work array
+    &        l2d =  1, & !< rank of 2D work array
+    &        l3d =  3, & !< rank of 3D work array
+    &        nx1d,     & !< grid number of 1D work array
+    &        nx2d,     & !< grid number of 2D work array along X
+    &        ny2d,     & !< grid number of 2D work array along Y
+    &        nx3d,     & !< grid number of 3D work array along X
+    &        ny3d,     & !< grid number of 3D work array along Y
+    &        nz3d        !< grid number of 3D work array along Z
    
   REAL(DP), PARAMETER :: c411 = -5.0_DP      / 2048.0_DP,   &
     &                    c412 =  9611.0_DP   / 737280.0_DP, &
@@ -135,9 +135,9 @@ MODULE spline_mod
     &         xl3, &
     &         yl3, &
     &         zl3
-  REAL(DP), ALLOCATABLE :: f1d(:,:),    &
-    &                      f2d(:,:,:),  &
-    &                      f3d(:,:,:,:)
+  REAL(DP), ALLOCATABLE :: f1d(:,:),    & !< 1D work array
+    &                      f2d(:,:,:),  & !< 2D work array
+    &                      f3d(:,:,:,:)   !< 3D work array
   !$acc declare create (f3d)
 
   PUBLIC :: l1d,    &
@@ -164,6 +164,9 @@ MODULE spline_mod
 
 CONTAINS
 
+!> A subroutine that initialize the 1D interpolation,
+!! @param[in] xsd \f$ X_{min} \f$
+!! @param[in] xld \f$ X_{max} \f$
   SUBROUTINE splin1 (xsd, xld & ! (in)
     &               )
 
@@ -180,6 +183,11 @@ CONTAINS
 
   END SUBROUTINE splin1
 
+!> A subroutine that initialize the 2D interpolation,
+!! @param[in] xsd \f$ X_{min} \f$
+!! @param[in] xld \f$ X_{max} \f$
+!! @param[in] ysd \f$ Y_{min} \f$
+!! @param[in] yld \f$ Y_{max} \f$
   SUBROUTINE splin2 (xsd, xld, ysd, yld & ! (in)
     &               )
 
@@ -201,6 +209,13 @@ CONTAINS
 
   END SUBROUTINE splin2
 
+!> A subroutine that initialize the 3D interpolation,
+!! @param[in] xsd \f$ X_{min} \f$
+!! @param[in] xld \f$ X_{max} \f$
+!! @param[in] ysd \f$ Y_{min} \f$
+!! @param[in] yld \f$ Y_{max} \f$
+!! @param[in] zsd \f$ Z_{min} \f$
+!! @param[in] zld \f$ Z_{max} \f$
   SUBROUTINE splin3 (xsd, xld, ysd, yld, zsd, zld & ! (in)
     &               )
     
@@ -227,6 +242,9 @@ CONTAINS
 
   END SUBROUTINE splin3
 
+!> A subroutine that interpolates the value, \f$ f(X) \f$, by the spline function at an intermediate point \f$ X \f$.
+!! @param[in]  xd a intermediate point \f$ X \f$
+!! @param[out] w0 interpolated values \f$ f(X) \f$
   SUBROUTINE spl1df (xd, & !(in) 
     &                w0  & !(out)
     &               )
@@ -300,6 +318,10 @@ CONTAINS
 
   END SUBROUTINE spl1df
 
+!> A subroutine that interpolates the value, \f$ f(X) \f$, and 1st derivation, \f$ f^{\prime}(X) \f$, by the spline function at an intermediate point \f$ X \f$.
+!! @param[in]  xd a intermediate point \f$ X \f$
+!! @param[out] w0 interpolated values \f$ f(X) \f$
+!! @param[out] wx 1st derivation \f$ \partial f(X) / \partial X \f$
   SUBROUTINE spl1dd (xd,    &!(in)
     &                w0, wx &!(out)
     &               )
@@ -405,6 +427,9 @@ CONTAINS
 
   END SUBROUTINE spl1dd
 
+!> A subroutine that interpolates the value, \f$ f(X,Y) \f$, by the spline function at an intermediate point \f$ (X, Y) \f$.
+!! @param[in]  xd a intermediate point \f$ (X, Y) \f$
+!! @param[out] w0 interpolated values \f$ f(X, Y) \f$
   SUBROUTINE spl2df (xd, & !(in) 
     &                w0  & !(out)
     &               )
@@ -528,6 +553,11 @@ CONTAINS
 
   END SUBROUTINE spl2df
 
+!> A subroutine that interpolates the value, \f$ f(X, Y) \f$, and 1st derivation, \f$ f^{\prime}(X, Y) \f$, by the spline function at an intermediate point \f$ (X, Y) \f$.
+!! @param[in]  xd a intermediate point \f$ (X, Y) \f$
+!! @param[out] w0 interpolated values \f$ f(X, Y) \f$
+!! @param[out] wx 1st derivation \f$ \partial f(X, Y) / \partial X \f$
+!! @param[out] wy 1st derivation \f$ \partial f(X, Y) / \partial Y \f$
   SUBROUTINE spl2dd (xd,        &!(in)
     &                w0, wx, wy &!(out)
     &               )
@@ -728,6 +758,9 @@ CONTAINS
     RETURN
   END SUBROUTINE spl2dd
 
+!> A subroutine that interpolates the value, \f$ f(X, Y, Z) \f$, by the spline function at an intermediate point \f$ (X, Y, Z) \f$.
+!! @param[in]  xd a intermediate point \f$ (X, Y, Z) \f$
+!! @param[out] w0 interpolated values \f$ f(X, Y, Z) \f$
   SUBROUTINE spl3df (xd, & !(in) 
     &                w0  & !(out)
     &               )
@@ -903,6 +936,12 @@ CONTAINS
     RETURN
   END SUBROUTINE spl3df
 
+!> A subroutine that interpolates the value, \f$ f(X, Y, Z) \f$, and 1st derivation, \f$ f^{\prime}(X, Y, Z) \f$, by the spline function at an intermediate point \f$ (X, Y, Z) \f$.
+!! @param[in]  xd a intermediate point \f$ (X, Y, Z) \f$
+!! @param[out] w0 interpolated values \f$ f(X, Y, Z) \f$
+!! @param[out] wx 1st derivation \f$ \partial f(X, Y, Z) / \partial X \f$
+!! @param[out] wy 1st derivation \f$ \partial f(X, Y, Z) / \partial Y \f$
+!! @param[out] wz 1st derivation \f$ \partial f(X, Y, Z) / \partial Z \f$
   SUBROUTINE spl3dd (xd,            &!(in)
     &                w0, wx, wy, wz &!(out)
     &               )

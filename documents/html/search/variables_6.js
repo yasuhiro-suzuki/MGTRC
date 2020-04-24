@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['nstep',['nstep',['../namespacefline__mod.html#afcba934d868232c71f93ae1f381f224b',1,'fline_mod']]],
-  ['ntheta',['ntheta',['../namespacefline__mod.html#a52041621c9be5c1fb11e84d65ca1b637',1,'fline_mod']]]
+  ['igrid',['igrid',['../namespacecylindrical__coord__mod.html#ad11c6099691bd2986878094ba39dbe36',1,'cylindrical_coord_mod']]],
+  ['ipfcoil',['ipfcoil',['../namespacecylindrical__coord__mod.html#a5696c1e3a2009b077bd27995065d8cf9',1,'cylindrical_coord_mod']]]
 ];

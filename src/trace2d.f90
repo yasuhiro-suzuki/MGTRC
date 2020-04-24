@@ -8,7 +8,19 @@
 !
 ! DESCRIPTION:
 !> @brief
-!>
+!> This routine traces the field line along the integral variable, \f$ \phi \f$.
+!
+!> @details
+!> This routine integrates an equation of the field lien as follows,
+!> \f{eqnarray}{
+!>  \frac{d R}{d \phi} &=& \frac{R B_R}{B_{\phi}} \\
+!>  \frac{d Z}{d \phi} &=& \frac{R B_Z}{B_{\phi}}
+!> \f}
+!> The step size, \f$ d \phi \f$, is defined by
+!> \f[
+!>   d \phi = \frac{2 \pi}{M} / N_{\phi}
+!> \f]
+!> Here, \f$ M \f$ is the toroidal field period and \f$ N_{\phi} \f$ is the number of grids along \f$ \phi \f$.
 !
 ! REVISION HISTORY:
 !> @date 19 Apr 2020
@@ -75,7 +87,7 @@ SUBROUTINE trace2d
 
 !Local varibales
   INTEGER, PARAMETER :: ln = 2
-  INTEGER :: lnx, &
+  INTEGER :: lnx, & !< step number
     &        i,   &
     &        j,   &
     &        k,   &
@@ -119,7 +131,7 @@ SUBROUTINE trace2d
 !for odeint
   INTEGER, ALLOCATABLE :: icount(:,:), &
     &                     iout(:,:)
-  REAL(DP) :: h
+  REAL(DP) :: h !< step size of the integration
   REAL(DP), ALLOCATABLE :: x0(:),     &
     &                      f0(:,:),   &
     &                      f(:,:,:,:)

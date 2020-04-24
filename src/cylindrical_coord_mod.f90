@@ -8,7 +8,8 @@
 !
 ! DESCRIPTION:
 !> @brief
-!>
+!> subroutines for the interpolation and derivation of the magnetic field
+!! and normalized flux distribution
 !
 ! REVISION HISTORY:
 !> @date 19 Apr 2020
@@ -46,109 +47,118 @@ MODULE cylindrical_coord_mod
 
   PRIVATE
 
+!----------------------------------------------------------------------------
+!> FILE_FORMAT sets the file format
 !
-! A parameter FILE_FORMAT selects the Fortran binary, netCDF, and HDF5
-!
+!> @li 1. bin:    Fortran binary 
+!> @li 2. netcdf: netCDF (optional)
+!> @li 3. hdf5:   HDF5 @em(not implemnted yet)
+!----------------------------------------------------------------------------
 
   CHARACTER(LEN=6) :: file_format = 'bin'
 
-!
-! A parameter MAG_FILE specifies the file name of the magnetic field
-!
+!----------------------------------------------------------------------------
+!> MAG_FILE sets the file name of the magnetic field
+!----------------------------------------------------------------------------
 
   CHARACTER(LEN=200) :: mag_file
 
 !----------------------------------------------------------------------------
-! A parameter MAG_FORM prescribes the table format of the magnetic field.
-! A parameter VERSION prescribes the version for the old legacy format.
+!> MAG_FORM prescribes the table format of the magnetic field.
 !
-! 1. mgrid:   file format used in the MAKEGRID code
-! 2. mgo:     file format used in KMAG/KMAG2 codes
-! 3. mag:     file format for the equilibrium field used in HINT/HINT2 codes
-! 3.1. ver2:  legacy HINT2 format
-! 4. vac:     file format for the vacuum field used in HINT/HINT2 codes
-! 4.1. ver2:  legacy HINT2 format
-! 5. movie:   file format used in the MIPS code
-! 6. mips_eq: file format for the equilibrium field used in the MIPS code
+!> @li 1. mgrid:   file format used in MAKEGRID
+!> @li 2. mgo:     file format used in KMAG/KMAG2
+!> @li 3. mag:     file format for the equilibrium field used in HINT
+!> @li 4. vac:     file format for the vacuum field used in HINT
+!> @li 5. movie:   file format used in the MIPS code
+!> @li 6. mips_eq: file format for the equilibrium field used in MIPS
 !----------------------------------------------------------------------------
 
-  CHARACTER(LEN=20) :: mag_form = '', &
-    &                  version  = ''
+  CHARACTER(LEN=20) :: mag_form = ''
 
+!----------------------------------------------------------------------------
+!> VERSION prescribes the version for the old legacy format.
 !
-! A parameter LFLUX switch on/off to read the flux distribution.
-!
+!> @li 1. ver2:  legacy HINT2 format
+!----------------------------------------------------------------------------
+
+  CHARACTER(LEN=20) :: version  = ''
+
+!----------------------------------------------------------------------------
+!> LFLUX switches on/off to read the flux distribution.
+!----------------------------------------------------------------------------
 
   LOGICAL :: lflux
 
-!
-! A parameter FLX_FILE specifies the file name of the magnetic field
-!
+!----------------------------------------------------------------------------
+!> FLX_FILE sets the file name of the flux distribution
+!----------------------------------------------------------------------------
 
   CHARACTER(LEN=200) :: flx_file
 
+!----------------------------------------------------------------------------
+!> FLX_FORM prescribes the table format of the flux distribution
 !
-! A parameter FLX_FORM prescribes the table format of the flux distribution
-!
-! 1. xss:    file format used in the SMAP code
-! 1. flx:    file format used in the HINT code
-! 2. eqdsk:  file format used in the EFIT code
-! 3. eqdata: file format used in the TOPICS
-!
+!> @li 1. xss:    file format used in SMAP
+!> @li 2. flx:    file format used in HINT
+!> @li 3. eqdsk:  file format used in EFIT
+!> @li 4. eqdata: file format used in TOPICS
+!----------------------------------------------------------------------------
 
   CHARACTER(LEN=20) :: flx_form = 'xss'
 
-!
-! A parameter LVACOUT switch on/off to output magnetic field
-!
+!----------------------------------------------------------------------------
+!> LVACOUT switches on/off to output the magnetic field
+!----------------------------------------------------------------------------
 
   LOGICAL :: lvacout
 
-!
+!----------------------------------------------------------------------------
+!> LSYMMETRY enforces the stellarator symmetry
+!----------------------------------------------------------------------------
 
   LOGICAL :: lsymmetry
 
 ! 
 
-  INTEGER ::  mtor,                    & ! toroidal field period
-    &         nr0b,                    & ! grid number along R-direction
-    &         nt0b,                    & ! grid number along phi-direction
-    &         nz0b,                    & ! grid number along Z-direction
+  INTEGER ::  mtor,                    & !< toroidal field period
+    &         nr0b,                    & !< grid number along R-direction
+    &         nt0b,                    & !< grid number along phi-direction
+    &         nz0b,                    & !< grid number along Z-direction
 !
-    &         ipfcoil(500) =  0,       & ! index of PF coil to specify the magnetic axis
-!                                        ! CAUTION! array size is 500 (max)
+    &         ipfcoil(500) =  0,       & !< index of PF coil to specify the magnetic axis            
+!                                        !  CAUTION! array size is 500 (max)
 !
-    &         kstep        =  99999,   & ! time steps of MIPS
-    &         igrid(4)                   ! grid number of MIPS
-  REAL(DP) :: bmax         =  5.0_DP,  & ! torelance of maximum B field
-    &         sedge        =  0.98_DP, & ! the edge toroidal flux (default)
-    &         pi2m,                    & ! one toroidal field period [rad]
-    &         rmaxb,                   & ! major radius of the inner side of computational DOmain [m]
-    &         rminb,                   & ! major radius of the outer side of computational DOmain [m]
-    &         zmaxb,                   & ! height of the lower side of computational DOmain [m]
-    &         zminb,                   & ! height of the higher side of the computational DOmain [m]
-    &         delrb,                   & ! grid size along R-direction [m]
-    &         delzb,                   & ! grid size along Z-direction [m]
-    &         badjust      =  1.0_DP,  & ! normalization factor of magnetic field
-    &         bnorm        =  3.0_DP,  & ! normalization factor of magnetic field
-    &         cj(500)      =  0.0_DP,  & ! work array to store coil current in each coils [A]
-!                                        ! CAUTION! array size is 500 (max)
-    &         extcur(500)  =  0.0_DP,  & ! work array to store coil current in each coils [A]
-!                                        ! #NOTE# compatibility for MAKEGRID of VMEC
-!                                        ! CAUTION! array size is 500 (max)
-    &         cturn(500)   =  1.0_DP,  & ! work array to store coil current in each coils [A]
-!                                        ! CAUTION! array size is 500 (max)
-    &         cfact(500)   =  1.0_DP,  & ! work array to store coil current in each coils [A]
-!                                        ! CAUTION! array size is 500 (max)
-    &         cpfcoil(500) =  1.0_DP,  &
-    &         mbound(4)    =  0.0_DP     ! boundary of MIPS
-!                                        ! mbound(1) = Rmin [m]
-!                                        ! mbound(2) = Rmax [m]
-!                                        ! mbound(3) = Zmin [m]
-!                                        ! mbound(4) = Zmax [m]
-  REAL(DP), ALLOCATABLE :: rg(:), &
-    &                      zg(:)
-
+    &         kstep        =  99999,   & !< time steps of MIPS
+    &         igrid(4)                   !< grid number of MIPS
+  REAL(DP) :: bmax         =  5.0_DP,  & !< torelance of maximum B field
+    &         sedge        =  0.98_DP, & !< the edge toroidal flux (default)
+    &         pi2m,                    & !< one toroidal field period [rad]
+    &         rmaxb,                   & !< R_max of computational domain [m]
+    &         rminb,                   & !< R_min of computational domain [m]
+    &         zmaxb,                   & !< Z_max of computational domain [m]
+    &         zminb,                   & !< Z_min of the computational domain [m]
+    &         delrb,                   & !< Delta_R [m]
+    &         delzb,                   & !< Delta_Z [m]
+    &         badjust      =  1.0_DP,  & !< normalization factor of magnetic field
+    &         bnorm        =  3.0_DP,  & !< normalization factor of magnetic field
+    &         cj(500)      =  0.0_DP,  & !< work array to store coil current in each coils [A]
+!                                        !  CAUTION! array size is 500 (max)
+    &         extcur(500)  =  0.0_DP,  & !< work array to store coil current in each coils [A]
+!                                        !  #NOTE# compatibility for MAKEGRID of VMEC
+!                                        !  CAUTION! array size is 500 (max)
+    &         cturn(500)   =  1.0_DP,  & !< work array to store coil current in each coils [A]
+!                                        !  CAUTION! array size is 500 (max)
+    &         cfact(500)   =  1.0_DP,  & !< work array to store coil current in each coils [A]
+!                                        !  CAUTION! array size is 500 (max)
+    &         cpfcoil(500) =  1.0_DP,  & !< factors of PF coils to fix the magnetic axis
+    &         mbound(4)    =  0.0_DP     !< 1D array to fix the boundary in MIPS
+!                                        !  mbound(1) = Rmin [m]
+!                                        !  mbound(2) = Rmax [m]
+!                                        !  mbound(3) = Zmin [m]
+!                                        !  mbound(4) = Zmax [m]
+  REAL(DP), ALLOCATABLE :: rg(:), & !< 1D array of R [m]
+    &                      zg(:)    !< 1D array of Z [m]
 
   NAMELIST /nlinp_coil_dat/ file_format, &
     &                       mag_file,    &
@@ -217,7 +227,7 @@ MODULE cylindrical_coord_mod
 
 CONTAINS
 
-
+!> A subroutine that opens a file containing the magnetic field.
   SUBROUTINE mag_file_open
 
     IMPLICIT NONE
@@ -230,6 +240,7 @@ CONTAINS
 
   END SUBROUTINE mag_file_open
 
+!> A subroutine that closes a file containing the magnetic field.
   SUBROUTINE mag_file_close
 
     IMPLICIT NONE
@@ -1849,6 +1860,7 @@ CONTAINS
 
   END SUBROUTINE read_eqdata
 
+!> A subroutine that deallocates fortran arrays.
   SUBROUTINE free_mem_field
 
     IMPLICIT NONE
@@ -1859,6 +1871,10 @@ CONTAINS
 
   END SUBROUTINE free_mem_field
 
+!> A subroutine that read a table of the magnetic field, (\f$B_R, B_{\phi}, B_Z, B\f$),
+!! on the cylindrical coordinate, (\f$R, \phi, Z\f$).
+!> @n
+!> @em NOTE: the right-handed system
   SUBROUTINE magset
 
     IMPLICIT NONE
@@ -2020,19 +2036,28 @@ CONTAINS
 
   END SUBROUTINE magset
 
+!> A subroutine that interpolates magnetic fields, (\f$B_R, B_{\phi}, B_Z, B\f$),
+!! on a given coordinate, (\f$R, \phi, Z\f$)
+!! @param[in] r \f$ R \f$ [m]
+!! @param[in] phi \f$ \phi \f$ [rad]
+!! @param[in] z \f$ Z \f$ [m]
+!! @param[out] br \f$ B_R \f$ [T]
+!! @param[out] bp \f$ B_{\phi} \f$ [T]
+!! @param[out] bz \f$ B_Z \f$ [T]
+!! @param[out] bb \f$ |B| \f$ [T]
   SUBROUTINE mgval1 (r, phi, z,     & ! (in)
     &                br, bp, bz, bb & ! (out)
     &               )
 
     IMPLICIT NONE
 
-    REAL(DP), INTENT(IN)  :: r,   & ! major radius in computational region [m]
-      &                      phi, & ! toroidal angle in computational region [rad]
-      &                      z      ! height in computational region [m]
-    REAL(DP), INTENT(OUT) :: br, & ! BR component on (R,phi,Z
-      &                      bp, & ! Bphi component on (R,phi,Z)
-      &                      bz, & ! BZ component on (R,phi,Z)
-      &                      bb    ! B strength on (R,phi,Z) [T]
+    REAL(DP), INTENT(IN)  :: r,   & ! R [m]
+      &                      phi, & ! toroidal angle, phi [rad]
+      &                      z      ! Z [m]
+    REAL(DP), INTENT(OUT) :: br, & ! B_R [T]
+      &                      bp, & ! B_phi [T]
+      &                      bz, & ! B_Z [T]
+      &                      bb    ! |B| [T]
     INTEGER :: iphi
     REAL(DP) :: phi1,   &
       &         xd(3),  &
@@ -2059,6 +2084,16 @@ CONTAINS
     RETURN
   END SUBROUTINE mgval1
 
+!> A subroutine that interpolates magnetic fields, (\f$B_R, B_{\phi}, B_Z, B\f$),
+!! and calculates 1st derivative, (\f$ \partial \textbf{B} / \partial R, \partial \textbf{B} / \partial \phi, \partial \textbf{B} / \partial Z \f$),
+!! on a given coordinate, (\f$R, \phi, Z\f$)
+!! @param[in] r \f$ R \f$ [m]
+!! @param[in] phi \f$ \phi \f$ [rad]
+!! @param[in] z \f$ Z \f$ [m]
+!! @param[out] b (\f$ B_R, B_{\phi}, B_Z, |B| \f$)[T]
+!! @param[out] dbdr (\f$ \partial B_R / \partial R, \partial B_{\phi} / \partial R, \partial B_Z / \partial R, \partial B / \partial R \f$) [T/m]
+!! @param[out] dbdp (\f$ \partial B_R / \partial \phi, \partial B_{\phi} / \partial \phi, \partial B_Z / \partial \phi, \partial B / \partial \phi \f$) [T/rad]
+!! @param[out] dbdz (\f$ \partial B_R / \partial Z, \partial B_{\phi} / \partial Z, \partial B_Z / \partial Z, \partial B / \partial Z \f$) [T/m]
   SUBROUTINE mgval2 (r, phi, z,          & ! (in)
     &                b, dbdr, dbdp, dbdz & ! (out)
     &               )
@@ -2102,6 +2137,12 @@ CONTAINS
     RETURN
   END SUBROUTINE mgval2
 
+!> A subroutine that interpolates normalized flux
+!! on a given coordinate, (\f$R, \phi, Z\f$)
+!! @param[in] r \f$ R \f$ [m]
+!! @param[in] phi \f$ \phi \f$ [rad]
+!! @param[in] z \f$ Z \f$ [m]
+!! @param[out] s normalized flux
   SUBROUTINE mgval3 (r, phi, z, & ! (in)
     &                s          & ! (out)
     &               )

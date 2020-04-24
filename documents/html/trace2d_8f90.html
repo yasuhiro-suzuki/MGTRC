@@ -83,6 +83,7 @@ $(function() {
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions/Subroutines</h2></td></tr>
 <tr class="memitem:aa4d0b54c80265a23593a907e1bd106d7"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="trace2d_8f90.html#aa4d0b54c80265a23593a907e1bd106d7">trace2d</a></td></tr>
+<tr class="memdesc:aa4d0b54c80265a23593a907e1bd106d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">This routine traces the field line along the integral variable, \( \phi \).  <a href="#aa4d0b54c80265a23593a907e1bd106d7">More...</a><br /></td></tr>
 <tr class="separator:aa4d0b54c80265a23593a907e1bd106d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function/Subroutine Documentation</h2>
@@ -100,11 +101,19 @@ Functions/Subroutines</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<dl class="section author"><dt>Author</dt><dd>Yasuhiro Suzuki, National Institute for Fusion Science </dd></dl>
-<dl class="section date"><dt>Date</dt><dd>19 Apr 2020 </dd></dl>
+
+<p>This routine traces the field line along the integral variable, \( \phi \). </p>
+<dl class="section author"><dt>Author</dt><dd>Yasuhiro Suzuki, National Institute for Fusion Science</dd></dl>
+<p>This routine integrates an equation of the field lien as follows, </p><p class="formulaDsp">
+\begin{eqnarray} \frac{d R}{d \phi} &amp;=&amp; \frac{R B_R}{B_{\phi}} \\ \frac{d Z}{d \phi} &amp;=&amp; \frac{R B_Z}{B_{\phi}} \end{eqnarray}
+</p>
+<p> The step size, \( d \phi \), is defined by </p><p class="formulaDsp">
+\[ d \phi = \frac{2 \pi}{M} / N_{\phi} \]
+</p>
+<p> Here, \( M \) is the toroidal field period and \( N_{\phi} \) is the number of grids along \( \phi \). </p><dl class="section date"><dt>Date</dt><dd>19 Apr 2020 </dd></dl>
 <dl class="section version"><dt>Version</dt><dd>Initial Version </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="trace2d_8f90_source.html#l00020">20</a> of file <a class="el" href="trace2d_8f90_source.html">trace2d.f90</a>.</p>
+<p class="definition">Definition at line <a class="el" href="trace2d_8f90_source.html#l00032">32</a> of file <a class="el" href="trace2d_8f90_source.html">trace2d.f90</a>.</p>
 
 </div>
 </div>

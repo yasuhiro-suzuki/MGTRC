@@ -74,81 +74,553 @@ $(function() {
 <div class="title">spline_mod Module Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>4th order 3D Spline interpolation  
+<a href="#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions/Subroutines</h2></td></tr>
-<tr class="memitem:aeb3b43310df253f9027eb88ccd4d1742"><td class="memItemLeft" align="right" valign="top"><a id="aeb3b43310df253f9027eb88ccd4d1742"></a>
-subroutine, public&#160;</td><td class="memItemRight" valign="bottom"><b>splin1</b> (xsd, xld)</td></tr>
+<tr class="memitem:aeb3b43310df253f9027eb88ccd4d1742"><td class="memItemLeft" align="right" valign="top">subroutine, public&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacespline__mod.html#aeb3b43310df253f9027eb88ccd4d1742">splin1</a> (xsd, xld)</td></tr>
+<tr class="memdesc:aeb3b43310df253f9027eb88ccd4d1742"><td class="mdescLeft">&#160;</td><td class="mdescRight">A subroutine that initialize the 1D interpolation,.  <a href="#aeb3b43310df253f9027eb88ccd4d1742">More...</a><br /></td></tr>
 <tr class="separator:aeb3b43310df253f9027eb88ccd4d1742"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af56cc4dc4cdefe2bd8f74f600742a206"><td class="memItemLeft" align="right" valign="top"><a id="af56cc4dc4cdefe2bd8f74f600742a206"></a>
-subroutine, public&#160;</td><td class="memItemRight" valign="bottom"><b>splin2</b> (xsd, xld, ysd, yld)</td></tr>
+<tr class="memitem:af56cc4dc4cdefe2bd8f74f600742a206"><td class="memItemLeft" align="right" valign="top">subroutine, public&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacespline__mod.html#af56cc4dc4cdefe2bd8f74f600742a206">splin2</a> (xsd, xld, ysd, yld)</td></tr>
+<tr class="memdesc:af56cc4dc4cdefe2bd8f74f600742a206"><td class="mdescLeft">&#160;</td><td class="mdescRight">A subroutine that initialize the 2D interpolation,.  <a href="#af56cc4dc4cdefe2bd8f74f600742a206">More...</a><br /></td></tr>
 <tr class="separator:af56cc4dc4cdefe2bd8f74f600742a206"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a16ee85ba325e3006f37304402ec50906"><td class="memItemLeft" align="right" valign="top"><a id="a16ee85ba325e3006f37304402ec50906"></a>
-subroutine, public&#160;</td><td class="memItemRight" valign="bottom"><b>splin3</b> (xsd, xld, ysd, yld, zsd, zld)</td></tr>
+<tr class="memitem:a16ee85ba325e3006f37304402ec50906"><td class="memItemLeft" align="right" valign="top">subroutine, public&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacespline__mod.html#a16ee85ba325e3006f37304402ec50906">splin3</a> (xsd, xld, ysd, yld, zsd, zld)</td></tr>
+<tr class="memdesc:a16ee85ba325e3006f37304402ec50906"><td class="mdescLeft">&#160;</td><td class="mdescRight">A subroutine that initialize the 3D interpolation,.  <a href="#a16ee85ba325e3006f37304402ec50906">More...</a><br /></td></tr>
 <tr class="separator:a16ee85ba325e3006f37304402ec50906"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acfd28dd7c1e68e905b0cad90e9eea347"><td class="memItemLeft" align="right" valign="top"><a id="acfd28dd7c1e68e905b0cad90e9eea347"></a>
-subroutine, public&#160;</td><td class="memItemRight" valign="bottom"><b>spl1df</b> (xd, w0)</td></tr>
+<tr class="memitem:acfd28dd7c1e68e905b0cad90e9eea347"><td class="memItemLeft" align="right" valign="top">subroutine, public&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacespline__mod.html#acfd28dd7c1e68e905b0cad90e9eea347">spl1df</a> (xd, w0)</td></tr>
+<tr class="memdesc:acfd28dd7c1e68e905b0cad90e9eea347"><td class="mdescLeft">&#160;</td><td class="mdescRight">A subroutine that interpolates the value, \( f(X) \), by the spline function at an intermediate point \( X \).  <a href="#acfd28dd7c1e68e905b0cad90e9eea347">More...</a><br /></td></tr>
 <tr class="separator:acfd28dd7c1e68e905b0cad90e9eea347"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a94996781d5292d787d026c07e02ab879"><td class="memItemLeft" align="right" valign="top"><a id="a94996781d5292d787d026c07e02ab879"></a>
-subroutine, public&#160;</td><td class="memItemRight" valign="bottom"><b>spl1dd</b> (xd, w0, wx)</td></tr>
+<tr class="memitem:a94996781d5292d787d026c07e02ab879"><td class="memItemLeft" align="right" valign="top">subroutine, public&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacespline__mod.html#a94996781d5292d787d026c07e02ab879">spl1dd</a> (xd, w0, wx)</td></tr>
+<tr class="memdesc:a94996781d5292d787d026c07e02ab879"><td class="mdescLeft">&#160;</td><td class="mdescRight">A subroutine that interpolates the value, \( f(X) \), and 1st derivation, \( f^{\prime}(X) \), by the spline function at an intermediate point \( X \).  <a href="#a94996781d5292d787d026c07e02ab879">More...</a><br /></td></tr>
 <tr class="separator:a94996781d5292d787d026c07e02ab879"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acdbd16bb76e41da4ba392eeb3af82756"><td class="memItemLeft" align="right" valign="top"><a id="acdbd16bb76e41da4ba392eeb3af82756"></a>
-subroutine, public&#160;</td><td class="memItemRight" valign="bottom"><b>spl2df</b> (xd, w0)</td></tr>
+<tr class="memitem:acdbd16bb76e41da4ba392eeb3af82756"><td class="memItemLeft" align="right" valign="top">subroutine, public&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacespline__mod.html#acdbd16bb76e41da4ba392eeb3af82756">spl2df</a> (xd, w0)</td></tr>
+<tr class="memdesc:acdbd16bb76e41da4ba392eeb3af82756"><td class="mdescLeft">&#160;</td><td class="mdescRight">A subroutine that interpolates the value, \( f(X,Y) \), by the spline function at an intermediate point \( (X, Y) \).  <a href="#acdbd16bb76e41da4ba392eeb3af82756">More...</a><br /></td></tr>
 <tr class="separator:acdbd16bb76e41da4ba392eeb3af82756"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a80cc05ecacfec6637fe8881051717c34"><td class="memItemLeft" align="right" valign="top"><a id="a80cc05ecacfec6637fe8881051717c34"></a>
-subroutine, public&#160;</td><td class="memItemRight" valign="bottom"><b>spl2dd</b> (xd, w0, wx, wy)</td></tr>
+<tr class="memitem:a80cc05ecacfec6637fe8881051717c34"><td class="memItemLeft" align="right" valign="top">subroutine, public&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacespline__mod.html#a80cc05ecacfec6637fe8881051717c34">spl2dd</a> (xd, w0, wx, wy)</td></tr>
+<tr class="memdesc:a80cc05ecacfec6637fe8881051717c34"><td class="mdescLeft">&#160;</td><td class="mdescRight">A subroutine that interpolates the value, \( f(X, Y) \), and 1st derivation, \( f^{\prime}(X, Y) \), by the spline function at an intermediate point \( (X, Y) \).  <a href="#a80cc05ecacfec6637fe8881051717c34">More...</a><br /></td></tr>
 <tr class="separator:a80cc05ecacfec6637fe8881051717c34"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a468d31705e4c0ebee25141198eee5e7b"><td class="memItemLeft" align="right" valign="top"><a id="a468d31705e4c0ebee25141198eee5e7b"></a>
-subroutine, public&#160;</td><td class="memItemRight" valign="bottom"><b>spl3df</b> (xd, w0)</td></tr>
+<tr class="memitem:a468d31705e4c0ebee25141198eee5e7b"><td class="memItemLeft" align="right" valign="top">subroutine, public&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacespline__mod.html#a468d31705e4c0ebee25141198eee5e7b">spl3df</a> (xd, w0)</td></tr>
+<tr class="memdesc:a468d31705e4c0ebee25141198eee5e7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">A subroutine that interpolates the value, \( f(X, Y, Z) \), by the spline function at an intermediate point \( (X, Y, Z) \).  <a href="#a468d31705e4c0ebee25141198eee5e7b">More...</a><br /></td></tr>
 <tr class="separator:a468d31705e4c0ebee25141198eee5e7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab1eab87ea9da6d583a57a71dfc98770d"><td class="memItemLeft" align="right" valign="top"><a id="ab1eab87ea9da6d583a57a71dfc98770d"></a>
-subroutine, public&#160;</td><td class="memItemRight" valign="bottom"><b>spl3dd</b> (xd, w0, wx, wy, wz)</td></tr>
+<tr class="memitem:ab1eab87ea9da6d583a57a71dfc98770d"><td class="memItemLeft" align="right" valign="top">subroutine, public&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacespline__mod.html#ab1eab87ea9da6d583a57a71dfc98770d">spl3dd</a> (xd, w0, wx, wy, wz)</td></tr>
+<tr class="memdesc:ab1eab87ea9da6d583a57a71dfc98770d"><td class="mdescLeft">&#160;</td><td class="mdescRight">A subroutine that interpolates the value, \( f(X, Y, Z) \), and 1st derivation, \( f^{\prime}(X, Y, Z) \), by the spline function at an intermediate point \( (X, Y, Z) \).  <a href="#ab1eab87ea9da6d583a57a71dfc98770d">More...</a><br /></td></tr>
 <tr class="separator:ab1eab87ea9da6d583a57a71dfc98770d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
 <tr class="memitem:a9df879d0f7f1f4dea098f2cb24fec2ce"><td class="memItemLeft" align="right" valign="top"><a id="a9df879d0f7f1f4dea098f2cb24fec2ce"></a>
-integer, public&#160;</td><td class="memItemRight" valign="bottom"><b>l1d</b> = 1</td></tr>
+integer, public&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacespline__mod.html#a9df879d0f7f1f4dea098f2cb24fec2ce">l1d</a> = 1</td></tr>
+<tr class="memdesc:a9df879d0f7f1f4dea098f2cb24fec2ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">rank of 1D work array <br /></td></tr>
 <tr class="separator:a9df879d0f7f1f4dea098f2cb24fec2ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad8882d4c4ccae0487f75d528c1534414"><td class="memItemLeft" align="right" valign="top"><a id="ad8882d4c4ccae0487f75d528c1534414"></a>
-integer, public&#160;</td><td class="memItemRight" valign="bottom"><b>l2d</b> = 1</td></tr>
+integer, public&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacespline__mod.html#ad8882d4c4ccae0487f75d528c1534414">l2d</a> = 1</td></tr>
+<tr class="memdesc:ad8882d4c4ccae0487f75d528c1534414"><td class="mdescLeft">&#160;</td><td class="mdescRight">rank of 2D work array <br /></td></tr>
 <tr class="separator:ad8882d4c4ccae0487f75d528c1534414"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aec585fb73f1a5348b64f96843589984b"><td class="memItemLeft" align="right" valign="top"><a id="aec585fb73f1a5348b64f96843589984b"></a>
-integer, public&#160;</td><td class="memItemRight" valign="bottom"><b>l3d</b> = 3</td></tr>
+integer, public&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacespline__mod.html#aec585fb73f1a5348b64f96843589984b">l3d</a> = 3</td></tr>
+<tr class="memdesc:aec585fb73f1a5348b64f96843589984b"><td class="mdescLeft">&#160;</td><td class="mdescRight">rank of 3D work array <br /></td></tr>
 <tr class="separator:aec585fb73f1a5348b64f96843589984b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af7f59402afcce3e5e748e6e44d57df0e"><td class="memItemLeft" align="right" valign="top"><a id="af7f59402afcce3e5e748e6e44d57df0e"></a>
-integer, public&#160;</td><td class="memItemRight" valign="bottom"><b>nx1d</b></td></tr>
+integer, public&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacespline__mod.html#af7f59402afcce3e5e748e6e44d57df0e">nx1d</a></td></tr>
+<tr class="memdesc:af7f59402afcce3e5e748e6e44d57df0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">grid number of 1D work array <br /></td></tr>
 <tr class="separator:af7f59402afcce3e5e748e6e44d57df0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a369d19ca79e2b8cea782683119871076"><td class="memItemLeft" align="right" valign="top"><a id="a369d19ca79e2b8cea782683119871076"></a>
-integer, public&#160;</td><td class="memItemRight" valign="bottom"><b>nx2d</b></td></tr>
+integer, public&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacespline__mod.html#a369d19ca79e2b8cea782683119871076">nx2d</a></td></tr>
+<tr class="memdesc:a369d19ca79e2b8cea782683119871076"><td class="mdescLeft">&#160;</td><td class="mdescRight">grid number of 2D work array along X <br /></td></tr>
 <tr class="separator:a369d19ca79e2b8cea782683119871076"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2ba92abeb771fc7cae28e3f4edfbffe5"><td class="memItemLeft" align="right" valign="top"><a id="a2ba92abeb771fc7cae28e3f4edfbffe5"></a>
-integer, public&#160;</td><td class="memItemRight" valign="bottom"><b>ny2d</b></td></tr>
+integer, public&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacespline__mod.html#a2ba92abeb771fc7cae28e3f4edfbffe5">ny2d</a></td></tr>
+<tr class="memdesc:a2ba92abeb771fc7cae28e3f4edfbffe5"><td class="mdescLeft">&#160;</td><td class="mdescRight">grid number of 2D work array along Y <br /></td></tr>
 <tr class="separator:a2ba92abeb771fc7cae28e3f4edfbffe5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aebe0ecaf9fa156280b4a5cd90a900ee9"><td class="memItemLeft" align="right" valign="top"><a id="aebe0ecaf9fa156280b4a5cd90a900ee9"></a>
-integer, public&#160;</td><td class="memItemRight" valign="bottom"><b>nx3d</b></td></tr>
+integer, public&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacespline__mod.html#aebe0ecaf9fa156280b4a5cd90a900ee9">nx3d</a></td></tr>
+<tr class="memdesc:aebe0ecaf9fa156280b4a5cd90a900ee9"><td class="mdescLeft">&#160;</td><td class="mdescRight">grid number of 3D work array along X <br /></td></tr>
 <tr class="separator:aebe0ecaf9fa156280b4a5cd90a900ee9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2dfe42356561e1d4d96d2c68148fe72e"><td class="memItemLeft" align="right" valign="top"><a id="a2dfe42356561e1d4d96d2c68148fe72e"></a>
-integer, public&#160;</td><td class="memItemRight" valign="bottom"><b>ny3d</b></td></tr>
+integer, public&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacespline__mod.html#a2dfe42356561e1d4d96d2c68148fe72e">ny3d</a></td></tr>
+<tr class="memdesc:a2dfe42356561e1d4d96d2c68148fe72e"><td class="mdescLeft">&#160;</td><td class="mdescRight">grid number of 3D work array along Y <br /></td></tr>
 <tr class="separator:a2dfe42356561e1d4d96d2c68148fe72e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8e6de2ac19f129aac1c174b4398dc7d8"><td class="memItemLeft" align="right" valign="top"><a id="a8e6de2ac19f129aac1c174b4398dc7d8"></a>
-integer, public&#160;</td><td class="memItemRight" valign="bottom"><b>nz3d</b></td></tr>
+integer, public&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacespline__mod.html#a8e6de2ac19f129aac1c174b4398dc7d8">nz3d</a></td></tr>
+<tr class="memdesc:a8e6de2ac19f129aac1c174b4398dc7d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">grid number of 3D work array along Z <br /></td></tr>
 <tr class="separator:a8e6de2ac19f129aac1c174b4398dc7d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa2bd521acd834046828b38b6b730e816"><td class="memItemLeft" align="right" valign="top"><a id="aa2bd521acd834046828b38b6b730e816"></a>
-real(dp), dimension(:,:), allocatable, public&#160;</td><td class="memItemRight" valign="bottom"><b>f1d</b></td></tr>
+real(dp), dimension(:,:), allocatable, public&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacespline__mod.html#aa2bd521acd834046828b38b6b730e816">f1d</a></td></tr>
+<tr class="memdesc:aa2bd521acd834046828b38b6b730e816"><td class="mdescLeft">&#160;</td><td class="mdescRight">1D work array <br /></td></tr>
 <tr class="separator:aa2bd521acd834046828b38b6b730e816"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a37e2a26de50f41ad15d224883aa3fdb3"><td class="memItemLeft" align="right" valign="top"><a id="a37e2a26de50f41ad15d224883aa3fdb3"></a>
-real(dp), dimension(:,:,:), allocatable, public&#160;</td><td class="memItemRight" valign="bottom"><b>f2d</b></td></tr>
+real(dp), dimension(:,:,:), allocatable, public&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacespline__mod.html#a37e2a26de50f41ad15d224883aa3fdb3">f2d</a></td></tr>
+<tr class="memdesc:a37e2a26de50f41ad15d224883aa3fdb3"><td class="mdescLeft">&#160;</td><td class="mdescRight">2D work array <br /></td></tr>
 <tr class="separator:a37e2a26de50f41ad15d224883aa3fdb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a829dac86c7ccaa5a6b3bd690d8e598e4"><td class="memItemLeft" align="right" valign="top"><a id="a829dac86c7ccaa5a6b3bd690d8e598e4"></a>
-real(dp), dimension(:,:,:,:), allocatable, public&#160;</td><td class="memItemRight" valign="bottom"><b>f3d</b></td></tr>
+real(dp), dimension(:,:,:,:), allocatable, public&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacespline__mod.html#a829dac86c7ccaa5a6b3bd690d8e598e4">f3d</a></td></tr>
+<tr class="memdesc:a829dac86c7ccaa5a6b3bd690d8e598e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">3D work array <br /></td></tr>
 <tr class="separator:a829dac86c7ccaa5a6b3bd690d8e598e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><dl class="section author"><dt>Author</dt><dd>Yasuhiro Suzuki, National Institute for Fusion Science </dd></dl>
-<dl class="section date"><dt>Date</dt><dd>19 Apr 2020 </dd></dl>
-<dl class="section version"><dt>Version</dt><dd>Initial Version </dd></dl>
-</div></div><!-- contents -->
+<div class="textblock"><p>4th order 3D Spline interpolation </p>
+<dl class="section author"><dt>Author</dt><dd>Yasuhiro Suzuki, National Institute for Fusion Science </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Based program was wrtten by T.Watanabe at NIFS 1990/8/29 </dd>
+<dd>
+Reference "Multi-Dimension Highly Accurate Spline Interpolation Method" (in Japanese) by Tsuguhiro Watanabe The Japan Society for Industrial and Applied Mathmatics </dd>
+<dd>
+DOI:10.11540/jsiamt.1.1_101</dd></dl>
+<p>This module contains following public routines. </p><ul>
+<li>1. splin1 : Initializing 1-dimensional interpolation. </li>
+<li>2. splin2 : Initializing 2-dimensional interpolation. </li>
+<li>3. splin3 : Initializing 3-dimensional interpolation. </li>
+<li>4. sp1df : 1-dimensional interpolation. </li>
+<li>5. sp1dd : 1-dimensional interpolation and derivation along X. </li>
+<li>6. sp2df : 2-dimensional interpolation. </li>
+<li>7. sp2dd : 2-dimensional interpolation and derivation along X, and Y. </li>
+<li>8. sp3df : 3-dimensional interpolation. </li>
+<li>9. sp3dd : 3-dimensional interpolation and derivation along X, Y, and Z. <dl class="section date"><dt>Date</dt><dd>19 Apr 2020 </dd>
+<dd>
+12 Dec 2010 </dd></dl>
+<dl class="section version"><dt>Version</dt><dd>add documents by Doxygen </dd>
+<dd>
+Initial Version </dd></dl>
+</li>
+</ul>
+</div><h2 class="groupheader">Function/Subroutine Documentation</h2>
+<a id="a94996781d5292d787d026c07e02ab879"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a94996781d5292d787d026c07e02ab879">&#9670;&nbsp;</a></span>spl1dd()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">subroutine, public spline_mod::spl1dd </td>
+          <td>(</td>
+          <td class="paramtype">real(dp), dimension(2), intent(in)&#160;</td>
+          <td class="paramname"><em>xd</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real(dp), dimension(<a class="el" href="namespacespline__mod.html#a9df879d0f7f1f4dea098f2cb24fec2ce">l1d</a>), intent(out)&#160;</td>
+          <td class="paramname"><em>w0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real(dp), dimension(<a class="el" href="namespacespline__mod.html#a9df879d0f7f1f4dea098f2cb24fec2ce">l1d</a>), intent(out)&#160;</td>
+          <td class="paramname"><em>wx</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A subroutine that interpolates the value, \( f(X) \), and 1st derivation, \( f^{\prime}(X) \), by the spline function at an intermediate point \( X \). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">xd</td><td>a intermediate point \( X \) </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">w0</td><td>interpolated values \( f(X) \) </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">wx</td><td>1st derivation \( \partial f(X) / \partial X \) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="spline__mod_8f90_source.html#l00328">328</a> of file <a class="el" href="spline__mod_8f90_source.html">spline_mod.f90</a>.</p>
+
+</div>
+</div>
+<a id="acfd28dd7c1e68e905b0cad90e9eea347"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acfd28dd7c1e68e905b0cad90e9eea347">&#9670;&nbsp;</a></span>spl1df()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">subroutine, public spline_mod::spl1df </td>
+          <td>(</td>
+          <td class="paramtype">real(dp), intent(in)&#160;</td>
+          <td class="paramname"><em>xd</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real(dp), dimension(<a class="el" href="namespacespline__mod.html#a9df879d0f7f1f4dea098f2cb24fec2ce">l1d</a>), intent(out)&#160;</td>
+          <td class="paramname"><em>w0</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A subroutine that interpolates the value, \( f(X) \), by the spline function at an intermediate point \( X \). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">xd</td><td>a intermediate point \( X \) </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">w0</td><td>interpolated values \( f(X) \) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="spline__mod_8f90_source.html#l00251">251</a> of file <a class="el" href="spline__mod_8f90_source.html">spline_mod.f90</a>.</p>
+
+</div>
+</div>
+<a id="a80cc05ecacfec6637fe8881051717c34"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a80cc05ecacfec6637fe8881051717c34">&#9670;&nbsp;</a></span>spl2dd()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">subroutine, public spline_mod::spl2dd </td>
+          <td>(</td>
+          <td class="paramtype">real(dp), dimension(2), intent(in)&#160;</td>
+          <td class="paramname"><em>xd</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real(dp), dimension(<a class="el" href="namespacespline__mod.html#ad8882d4c4ccae0487f75d528c1534414">l2d</a>), intent(out)&#160;</td>
+          <td class="paramname"><em>w0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real(dp), dimension(<a class="el" href="namespacespline__mod.html#ad8882d4c4ccae0487f75d528c1534414">l2d</a>), intent(out)&#160;</td>
+          <td class="paramname"><em>wx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real(dp), dimension(<a class="el" href="namespacespline__mod.html#ad8882d4c4ccae0487f75d528c1534414">l2d</a>), intent(out)&#160;</td>
+          <td class="paramname"><em>wy</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A subroutine that interpolates the value, \( f(X, Y) \), and 1st derivation, \( f^{\prime}(X, Y) \), by the spline function at an intermediate point \( (X, Y) \). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">xd</td><td>a intermediate point \( (X, Y) \) </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">w0</td><td>interpolated values \( f(X, Y) \) </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">wx</td><td>1st derivation \( \partial f(X, Y) / \partial X \) </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">wy</td><td>1st derivation \( \partial f(X, Y) / \partial Y \) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="spline__mod_8f90_source.html#l00564">564</a> of file <a class="el" href="spline__mod_8f90_source.html">spline_mod.f90</a>.</p>
+
+</div>
+</div>
+<a id="acdbd16bb76e41da4ba392eeb3af82756"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acdbd16bb76e41da4ba392eeb3af82756">&#9670;&nbsp;</a></span>spl2df()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">subroutine, public spline_mod::spl2df </td>
+          <td>(</td>
+          <td class="paramtype">real(dp), dimension(2), intent(in)&#160;</td>
+          <td class="paramname"><em>xd</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real(dp), dimension(<a class="el" href="namespacespline__mod.html#ad8882d4c4ccae0487f75d528c1534414">l2d</a>), intent(out)&#160;</td>
+          <td class="paramname"><em>w0</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A subroutine that interpolates the value, \( f(X,Y) \), by the spline function at an intermediate point \( (X, Y) \). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">xd</td><td>a intermediate point \( (X, Y) \) </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">w0</td><td>interpolated values \( f(X, Y) \) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="spline__mod_8f90_source.html#l00436">436</a> of file <a class="el" href="spline__mod_8f90_source.html">spline_mod.f90</a>.</p>
+
+</div>
+</div>
+<a id="ab1eab87ea9da6d583a57a71dfc98770d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab1eab87ea9da6d583a57a71dfc98770d">&#9670;&nbsp;</a></span>spl3dd()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">subroutine, public spline_mod::spl3dd </td>
+          <td>(</td>
+          <td class="paramtype">real(dp), dimension(3), intent(in)&#160;</td>
+          <td class="paramname"><em>xd</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real(dp), dimension(<a class="el" href="namespacespline__mod.html#aec585fb73f1a5348b64f96843589984b">l3d</a>), intent(out)&#160;</td>
+          <td class="paramname"><em>w0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real(dp), dimension(<a class="el" href="namespacespline__mod.html#aec585fb73f1a5348b64f96843589984b">l3d</a>), intent(out)&#160;</td>
+          <td class="paramname"><em>wx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real(dp), dimension(<a class="el" href="namespacespline__mod.html#aec585fb73f1a5348b64f96843589984b">l3d</a>), intent(out)&#160;</td>
+          <td class="paramname"><em>wy</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real(dp), dimension(<a class="el" href="namespacespline__mod.html#aec585fb73f1a5348b64f96843589984b">l3d</a>), intent(out)&#160;</td>
+          <td class="paramname"><em>wz</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A subroutine that interpolates the value, \( f(X, Y, Z) \), and 1st derivation, \( f^{\prime}(X, Y, Z) \), by the spline function at an intermediate point \( (X, Y, Z) \). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">xd</td><td>a intermediate point \( (X, Y, Z) \) </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">w0</td><td>interpolated values \( f(X, Y, Z) \) </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">wx</td><td>1st derivation \( \partial f(X, Y, Z) / \partial X \) </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">wy</td><td>1st derivation \( \partial f(X, Y, Z) / \partial Y \) </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">wz</td><td>1st derivation \( \partial f(X, Y, Z) / \partial Z \) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="spline__mod_8f90_source.html#l00948">948</a> of file <a class="el" href="spline__mod_8f90_source.html">spline_mod.f90</a>.</p>
+
+</div>
+</div>
+<a id="a468d31705e4c0ebee25141198eee5e7b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a468d31705e4c0ebee25141198eee5e7b">&#9670;&nbsp;</a></span>spl3df()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">subroutine, public spline_mod::spl3df </td>
+          <td>(</td>
+          <td class="paramtype">real(dp), dimension(3), intent(in)&#160;</td>
+          <td class="paramname"><em>xd</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real(dp), dimension(<a class="el" href="namespacespline__mod.html#aec585fb73f1a5348b64f96843589984b">l3d</a>), intent(out)&#160;</td>
+          <td class="paramname"><em>w0</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A subroutine that interpolates the value, \( f(X, Y, Z) \), by the spline function at an intermediate point \( (X, Y, Z) \). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">xd</td><td>a intermediate point \( (X, Y, Z) \) </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">w0</td><td>interpolated values \( f(X, Y, Z) \) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="spline__mod_8f90_source.html#l00767">767</a> of file <a class="el" href="spline__mod_8f90_source.html">spline_mod.f90</a>.</p>
+
+</div>
+</div>
+<a id="aeb3b43310df253f9027eb88ccd4d1742"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeb3b43310df253f9027eb88ccd4d1742">&#9670;&nbsp;</a></span>splin1()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">subroutine, public spline_mod::splin1 </td>
+          <td>(</td>
+          <td class="paramtype">real(dp), intent(in)&#160;</td>
+          <td class="paramname"><em>xsd</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real(dp), intent(in)&#160;</td>
+          <td class="paramname"><em>xld</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A subroutine that initialize the 1D interpolation,. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">xsd</td><td>\( X_{min} \) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">xld</td><td>\( X_{max} \) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="spline__mod_8f90_source.html#l00172">172</a> of file <a class="el" href="spline__mod_8f90_source.html">spline_mod.f90</a>.</p>
+
+</div>
+</div>
+<a id="af56cc4dc4cdefe2bd8f74f600742a206"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af56cc4dc4cdefe2bd8f74f600742a206">&#9670;&nbsp;</a></span>splin2()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">subroutine, public spline_mod::splin2 </td>
+          <td>(</td>
+          <td class="paramtype">real(dp), intent(in)&#160;</td>
+          <td class="paramname"><em>xsd</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real(dp), intent(in)&#160;</td>
+          <td class="paramname"><em>xld</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real(dp), intent(in)&#160;</td>
+          <td class="paramname"><em>ysd</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real(dp), intent(in)&#160;</td>
+          <td class="paramname"><em>yld</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A subroutine that initialize the 2D interpolation,. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">xsd</td><td>\( X_{min} \) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">xld</td><td>\( X_{max} \) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">ysd</td><td>\( Y_{min} \) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">yld</td><td>\( Y_{max} \) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="spline__mod_8f90_source.html#l00193">193</a> of file <a class="el" href="spline__mod_8f90_source.html">spline_mod.f90</a>.</p>
+
+</div>
+</div>
+<a id="a16ee85ba325e3006f37304402ec50906"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a16ee85ba325e3006f37304402ec50906">&#9670;&nbsp;</a></span>splin3()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">subroutine, public spline_mod::splin3 </td>
+          <td>(</td>
+          <td class="paramtype">real(dp), intent(in)&#160;</td>
+          <td class="paramname"><em>xsd</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real(dp), intent(in)&#160;</td>
+          <td class="paramname"><em>xld</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real(dp), intent(in)&#160;</td>
+          <td class="paramname"><em>ysd</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real(dp), intent(in)&#160;</td>
+          <td class="paramname"><em>yld</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real(dp), intent(in)&#160;</td>
+          <td class="paramname"><em>zsd</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real(dp), intent(in)&#160;</td>
+          <td class="paramname"><em>zld</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A subroutine that initialize the 3D interpolation,. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">xsd</td><td>\( X_{min} \) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">xld</td><td>\( X_{max} \) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">ysd</td><td>\( Y_{min} \) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">yld</td><td>\( Y_{max} \) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">zsd</td><td>\( Z_{min} \) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">zld</td><td>\( Z_{max} \) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="spline__mod_8f90_source.html#l00221">221</a> of file <a class="el" href="spline__mod_8f90_source.html">spline_mod.f90</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

@@ -1,6 +1,8 @@
 var searchData=
 [
   ['def_5fstart',['def_start',['../namespacefline__mod.html#a4d5f59e1dddfb90594fb267e62a05dc6',1,'fline_mod']]],
+  ['delrb',['delrb',['../namespacecylindrical__coord__mod.html#a924bc1abe04acebc6ed5f6840bdcbed9',1,'cylindrical_coord_mod']]],
+  ['delzb',['delzb',['../namespacecylindrical__coord__mod.html#a14b02858c1ccbf5bda0721dcab53c3cd',1,'cylindrical_coord_mod']]],
   ['div_5ftrace3d',['div_trace3d',['../div__trace3d_8f90.html#ae5801aaab8afed284f68ea4149b19a81',1,'div_trace3d.f90']]],
   ['div_5ftrace3d_2ef90',['div_trace3d.f90',['../div__trace3d_8f90.html',1,'']]],
   ['divertor_5fmod',['divertor_mod',['../namespacedivertor__mod.html',1,'']]],

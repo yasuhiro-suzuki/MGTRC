@@ -74,141 +74,477 @@ $(function() {
 <div class="title">cylindrical_coord_mod Module Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>subroutines for the interpolation and derivation of the magnetic field and normalized flux distribution  
+<a href="#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions/Subroutines</h2></td></tr>
 <tr class="memitem:a63408aa4b693ce46ae552f77423780df"><td class="memItemLeft" align="right" valign="top"><a id="a63408aa4b693ce46ae552f77423780df"></a>
-subroutine, public&#160;</td><td class="memItemRight" valign="bottom"><b>mag_file_open</b></td></tr>
+subroutine, public&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecylindrical__coord__mod.html#a63408aa4b693ce46ae552f77423780df">mag_file_open</a></td></tr>
+<tr class="memdesc:a63408aa4b693ce46ae552f77423780df"><td class="mdescLeft">&#160;</td><td class="mdescRight">A subroutine that opens a file containing the magnetic field. <br /></td></tr>
 <tr class="separator:a63408aa4b693ce46ae552f77423780df"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a15c59599a6ee13479b5eff7ccb73ddd3"><td class="memItemLeft" align="right" valign="top"><a id="a15c59599a6ee13479b5eff7ccb73ddd3"></a>
-subroutine, public&#160;</td><td class="memItemRight" valign="bottom"><b>mag_file_close</b></td></tr>
+subroutine, public&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecylindrical__coord__mod.html#a15c59599a6ee13479b5eff7ccb73ddd3">mag_file_close</a></td></tr>
+<tr class="memdesc:a15c59599a6ee13479b5eff7ccb73ddd3"><td class="mdescLeft">&#160;</td><td class="mdescRight">A subroutine that closes a file containing the magnetic field. <br /></td></tr>
 <tr class="separator:a15c59599a6ee13479b5eff7ccb73ddd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5a48afa098c886c413a78009af682384"><td class="memItemLeft" align="right" valign="top"><a id="a5a48afa098c886c413a78009af682384"></a>
-subroutine, public&#160;</td><td class="memItemRight" valign="bottom"><b>free_mem_field</b></td></tr>
+subroutine, public&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecylindrical__coord__mod.html#a5a48afa098c886c413a78009af682384">free_mem_field</a></td></tr>
+<tr class="memdesc:a5a48afa098c886c413a78009af682384"><td class="mdescLeft">&#160;</td><td class="mdescRight">A subroutine that deallocates fortran arrays. <br /></td></tr>
 <tr class="separator:a5a48afa098c886c413a78009af682384"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a58274f7419eae0234762c536a9fb5ab9"><td class="memItemLeft" align="right" valign="top"><a id="a58274f7419eae0234762c536a9fb5ab9"></a>
-subroutine, public&#160;</td><td class="memItemRight" valign="bottom"><b>magset</b></td></tr>
+subroutine, public&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecylindrical__coord__mod.html#a58274f7419eae0234762c536a9fb5ab9">magset</a></td></tr>
+<tr class="memdesc:a58274f7419eae0234762c536a9fb5ab9"><td class="mdescLeft">&#160;</td><td class="mdescRight">A subroutine that read a table of the magnetic field, ( \(B_R, B_{\phi}, B_Z, B\)), on the cylindrical coordinate, ( \(R, \phi, Z\)). <br />
+ <em>NOTE:</em> the right-handed system. <br /></td></tr>
 <tr class="separator:a58274f7419eae0234762c536a9fb5ab9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6f18caa94d7e1e946b0309b3906344f2"><td class="memItemLeft" align="right" valign="top"><a id="a6f18caa94d7e1e946b0309b3906344f2"></a>
-subroutine, public&#160;</td><td class="memItemRight" valign="bottom"><b>mgval1</b> (r, phi, z, br, bp, bz, bb)</td></tr>
+<tr class="memitem:a6f18caa94d7e1e946b0309b3906344f2"><td class="memItemLeft" align="right" valign="top">subroutine, public&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecylindrical__coord__mod.html#a6f18caa94d7e1e946b0309b3906344f2">mgval1</a> (r, phi, z, br, bp, bz, bb)</td></tr>
+<tr class="memdesc:a6f18caa94d7e1e946b0309b3906344f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">A subroutine that interpolates magnetic fields, ( \(B_R, B_{\phi}, B_Z, B\)), on a given coordinate, ( \(R, \phi, Z\))  <a href="#a6f18caa94d7e1e946b0309b3906344f2">More...</a><br /></td></tr>
 <tr class="separator:a6f18caa94d7e1e946b0309b3906344f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a88326bcc4316d521f4a59518f80190ed"><td class="memItemLeft" align="right" valign="top"><a id="a88326bcc4316d521f4a59518f80190ed"></a>
-subroutine, public&#160;</td><td class="memItemRight" valign="bottom"><b>mgval2</b> (r, phi, z, b, dbdr, dbdp, dbdz)</td></tr>
+<tr class="memitem:a88326bcc4316d521f4a59518f80190ed"><td class="memItemLeft" align="right" valign="top">subroutine, public&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecylindrical__coord__mod.html#a88326bcc4316d521f4a59518f80190ed">mgval2</a> (r, phi, z, b, dbdr, dbdp, dbdz)</td></tr>
+<tr class="memdesc:a88326bcc4316d521f4a59518f80190ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">A subroutine that interpolates magnetic fields, ( \(B_R, B_{\phi}, B_Z, B\)), and calculates 1st derivative, ( \( \partial \textbf{B} / \partial R, \partial \textbf{B} / \partial \phi, \partial \textbf{B} / \partial Z \)), on a given coordinate, ( \(R, \phi, Z\))  <a href="#a88326bcc4316d521f4a59518f80190ed">More...</a><br /></td></tr>
 <tr class="separator:a88326bcc4316d521f4a59518f80190ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afb8287db9ebd97dc624cb00bebba2603"><td class="memItemLeft" align="right" valign="top"><a id="afb8287db9ebd97dc624cb00bebba2603"></a>
-subroutine, public&#160;</td><td class="memItemRight" valign="bottom"><b>mgval3</b> (r, phi, z, s)</td></tr>
+<tr class="memitem:afb8287db9ebd97dc624cb00bebba2603"><td class="memItemLeft" align="right" valign="top">subroutine, public&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecylindrical__coord__mod.html#afb8287db9ebd97dc624cb00bebba2603">mgval3</a> (r, phi, z, s)</td></tr>
+<tr class="memdesc:afb8287db9ebd97dc624cb00bebba2603"><td class="mdescLeft">&#160;</td><td class="mdescRight">A subroutine that interpolates normalized flux on a given coordinate, ( \(R, \phi, Z\))  <a href="#afb8287db9ebd97dc624cb00bebba2603">More...</a><br /></td></tr>
 <tr class="separator:afb8287db9ebd97dc624cb00bebba2603"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a744e99c8b039839d56fc0dc86029f8be"><td class="memItemLeft" align="right" valign="top"><a id="a744e99c8b039839d56fc0dc86029f8be"></a>
-character(len=6), public&#160;</td><td class="memItemRight" valign="bottom"><b>file_format</b> = 'bin'</td></tr>
+<tr class="memitem:a744e99c8b039839d56fc0dc86029f8be"><td class="memItemLeft" align="right" valign="top">character(len=6), public&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecylindrical__coord__mod.html#a744e99c8b039839d56fc0dc86029f8be">file_format</a> = 'bin'</td></tr>
+<tr class="memdesc:a744e99c8b039839d56fc0dc86029f8be"><td class="mdescLeft">&#160;</td><td class="mdescRight">FILE_FORMAT sets the file format.  <a href="#a744e99c8b039839d56fc0dc86029f8be">More...</a><br /></td></tr>
 <tr class="separator:a744e99c8b039839d56fc0dc86029f8be"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a300373b2deb8571c17821917cf9643d8"><td class="memItemLeft" align="right" valign="top"><a id="a300373b2deb8571c17821917cf9643d8"></a>
-character(len=200), public&#160;</td><td class="memItemRight" valign="bottom"><b>mag_file</b></td></tr>
+character(len=200), public&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecylindrical__coord__mod.html#a300373b2deb8571c17821917cf9643d8">mag_file</a></td></tr>
+<tr class="memdesc:a300373b2deb8571c17821917cf9643d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">MAG_FILE sets the file name of the magnetic field. <br /></td></tr>
 <tr class="separator:a300373b2deb8571c17821917cf9643d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9494c9050d74843d4799703b3bddf898"><td class="memItemLeft" align="right" valign="top"><a id="a9494c9050d74843d4799703b3bddf898"></a>
-character(len=20), public&#160;</td><td class="memItemRight" valign="bottom"><b>mag_form</b> = ''</td></tr>
+<tr class="memitem:a9494c9050d74843d4799703b3bddf898"><td class="memItemLeft" align="right" valign="top">character(len=20), public&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecylindrical__coord__mod.html#a9494c9050d74843d4799703b3bddf898">mag_form</a> = ''</td></tr>
+<tr class="memdesc:a9494c9050d74843d4799703b3bddf898"><td class="mdescLeft">&#160;</td><td class="mdescRight">MAG_FORM prescribes the table format of the magnetic field.  <a href="#a9494c9050d74843d4799703b3bddf898">More...</a><br /></td></tr>
 <tr class="separator:a9494c9050d74843d4799703b3bddf898"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4fd4d1861d3537ad62405615e827de59"><td class="memItemLeft" align="right" valign="top"><a id="a4fd4d1861d3537ad62405615e827de59"></a>
-character(len=20), public&#160;</td><td class="memItemRight" valign="bottom"><b>version</b> = ''</td></tr>
+<tr class="memitem:a4fd4d1861d3537ad62405615e827de59"><td class="memItemLeft" align="right" valign="top">character(len=20), public&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecylindrical__coord__mod.html#a4fd4d1861d3537ad62405615e827de59">version</a> = ''</td></tr>
+<tr class="memdesc:a4fd4d1861d3537ad62405615e827de59"><td class="mdescLeft">&#160;</td><td class="mdescRight">VERSION prescribes the version for the old legacy format.  <a href="#a4fd4d1861d3537ad62405615e827de59">More...</a><br /></td></tr>
 <tr class="separator:a4fd4d1861d3537ad62405615e827de59"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2896af2a1bc71a83d5b7ec527774b5ec"><td class="memItemLeft" align="right" valign="top"><a id="a2896af2a1bc71a83d5b7ec527774b5ec"></a>
-logical, public&#160;</td><td class="memItemRight" valign="bottom"><b>lflux</b></td></tr>
+logical, public&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecylindrical__coord__mod.html#a2896af2a1bc71a83d5b7ec527774b5ec">lflux</a></td></tr>
+<tr class="memdesc:a2896af2a1bc71a83d5b7ec527774b5ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">LFLUX switches on/off to read the flux distribution. <br /></td></tr>
 <tr class="separator:a2896af2a1bc71a83d5b7ec527774b5ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a840cc5ff2a7ebadf2b132ff8e107da26"><td class="memItemLeft" align="right" valign="top"><a id="a840cc5ff2a7ebadf2b132ff8e107da26"></a>
-character(len=200), public&#160;</td><td class="memItemRight" valign="bottom"><b>flx_file</b></td></tr>
+character(len=200), public&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecylindrical__coord__mod.html#a840cc5ff2a7ebadf2b132ff8e107da26">flx_file</a></td></tr>
+<tr class="memdesc:a840cc5ff2a7ebadf2b132ff8e107da26"><td class="mdescLeft">&#160;</td><td class="mdescRight">FLX_FILE sets the file name of the flux distribution. <br /></td></tr>
 <tr class="separator:a840cc5ff2a7ebadf2b132ff8e107da26"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af595c644b87a7e6806629fcbaef02382"><td class="memItemLeft" align="right" valign="top"><a id="af595c644b87a7e6806629fcbaef02382"></a>
-character(len=20), public&#160;</td><td class="memItemRight" valign="bottom"><b>flx_form</b> = 'xss'</td></tr>
+<tr class="memitem:af595c644b87a7e6806629fcbaef02382"><td class="memItemLeft" align="right" valign="top">character(len=20), public&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecylindrical__coord__mod.html#af595c644b87a7e6806629fcbaef02382">flx_form</a> = 'xss'</td></tr>
+<tr class="memdesc:af595c644b87a7e6806629fcbaef02382"><td class="mdescLeft">&#160;</td><td class="mdescRight">FLX_FORM prescribes the table format of the flux distribution.  <a href="#af595c644b87a7e6806629fcbaef02382">More...</a><br /></td></tr>
 <tr class="separator:af595c644b87a7e6806629fcbaef02382"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a86c370e0c4988d5c3e9bf95e79372873"><td class="memItemLeft" align="right" valign="top"><a id="a86c370e0c4988d5c3e9bf95e79372873"></a>
-logical, public&#160;</td><td class="memItemRight" valign="bottom"><b>lvacout</b></td></tr>
+logical, public&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecylindrical__coord__mod.html#a86c370e0c4988d5c3e9bf95e79372873">lvacout</a></td></tr>
+<tr class="memdesc:a86c370e0c4988d5c3e9bf95e79372873"><td class="mdescLeft">&#160;</td><td class="mdescRight">LVACOUT switches on/off to output the magnetic field. <br /></td></tr>
 <tr class="separator:a86c370e0c4988d5c3e9bf95e79372873"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeb5769832529f4f0c328467ca863e1ef"><td class="memItemLeft" align="right" valign="top"><a id="aeb5769832529f4f0c328467ca863e1ef"></a>
-logical, public&#160;</td><td class="memItemRight" valign="bottom"><b>lsymmetry</b></td></tr>
+logical, public&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecylindrical__coord__mod.html#aeb5769832529f4f0c328467ca863e1ef">lsymmetry</a></td></tr>
+<tr class="memdesc:aeb5769832529f4f0c328467ca863e1ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">LSYMMETRY enforces the stellarator symmetry. <br /></td></tr>
 <tr class="separator:aeb5769832529f4f0c328467ca863e1ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9465f2af5af0bc7979de157b09e2ef1d"><td class="memItemLeft" align="right" valign="top"><a id="a9465f2af5af0bc7979de157b09e2ef1d"></a>
-integer, public&#160;</td><td class="memItemRight" valign="bottom"><b>mtor</b></td></tr>
+integer, public&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecylindrical__coord__mod.html#a9465f2af5af0bc7979de157b09e2ef1d">mtor</a></td></tr>
+<tr class="memdesc:a9465f2af5af0bc7979de157b09e2ef1d"><td class="mdescLeft">&#160;</td><td class="mdescRight">toroidal field period <br /></td></tr>
 <tr class="separator:a9465f2af5af0bc7979de157b09e2ef1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7f146debf68dd57ce5924229609ef1f7"><td class="memItemLeft" align="right" valign="top"><a id="a7f146debf68dd57ce5924229609ef1f7"></a>
-integer, public&#160;</td><td class="memItemRight" valign="bottom"><b>nr0b</b></td></tr>
+integer, public&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecylindrical__coord__mod.html#a7f146debf68dd57ce5924229609ef1f7">nr0b</a></td></tr>
+<tr class="memdesc:a7f146debf68dd57ce5924229609ef1f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">grid number along R-direction <br /></td></tr>
 <tr class="separator:a7f146debf68dd57ce5924229609ef1f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9202637ea9800f90208dace3abf9cf0f"><td class="memItemLeft" align="right" valign="top"><a id="a9202637ea9800f90208dace3abf9cf0f"></a>
-integer, public&#160;</td><td class="memItemRight" valign="bottom"><b>nt0b</b></td></tr>
+integer, public&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecylindrical__coord__mod.html#a9202637ea9800f90208dace3abf9cf0f">nt0b</a></td></tr>
+<tr class="memdesc:a9202637ea9800f90208dace3abf9cf0f"><td class="mdescLeft">&#160;</td><td class="mdescRight">grid number along phi-direction <br /></td></tr>
 <tr class="separator:a9202637ea9800f90208dace3abf9cf0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afaa1fd6013e74f440126f519fee07a32"><td class="memItemLeft" align="right" valign="top"><a id="afaa1fd6013e74f440126f519fee07a32"></a>
-integer, public&#160;</td><td class="memItemRight" valign="bottom"><b>nz0b</b></td></tr>
+integer, public&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecylindrical__coord__mod.html#afaa1fd6013e74f440126f519fee07a32">nz0b</a></td></tr>
+<tr class="memdesc:afaa1fd6013e74f440126f519fee07a32"><td class="mdescLeft">&#160;</td><td class="mdescRight">grid number along Z-direction <br /></td></tr>
 <tr class="separator:afaa1fd6013e74f440126f519fee07a32"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5696c1e3a2009b077bd27995065d8cf9"><td class="memItemLeft" align="right" valign="top"><a id="a5696c1e3a2009b077bd27995065d8cf9"></a>
-integer, dimension(500), public&#160;</td><td class="memItemRight" valign="bottom"><b>ipfcoil</b> = 0</td></tr>
+integer, dimension(500), public&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecylindrical__coord__mod.html#a5696c1e3a2009b077bd27995065d8cf9">ipfcoil</a> = 0</td></tr>
+<tr class="memdesc:a5696c1e3a2009b077bd27995065d8cf9"><td class="mdescLeft">&#160;</td><td class="mdescRight">index of PF coil to specify the magnetic axis <br /></td></tr>
 <tr class="separator:a5696c1e3a2009b077bd27995065d8cf9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac8e44909dd24baaf1644e6904c26e7db"><td class="memItemLeft" align="right" valign="top"><a id="ac8e44909dd24baaf1644e6904c26e7db"></a>
-integer, public&#160;</td><td class="memItemRight" valign="bottom"><b>kstep</b> = 99999</td></tr>
+integer, public&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecylindrical__coord__mod.html#ac8e44909dd24baaf1644e6904c26e7db">kstep</a> = 99999</td></tr>
+<tr class="memdesc:ac8e44909dd24baaf1644e6904c26e7db"><td class="mdescLeft">&#160;</td><td class="mdescRight">time steps of MIPS <br /></td></tr>
 <tr class="separator:ac8e44909dd24baaf1644e6904c26e7db"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad11c6099691bd2986878094ba39dbe36"><td class="memItemLeft" align="right" valign="top"><a id="ad11c6099691bd2986878094ba39dbe36"></a>
-integer, dimension(4), public&#160;</td><td class="memItemRight" valign="bottom"><b>igrid</b></td></tr>
+integer, dimension(4), public&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecylindrical__coord__mod.html#ad11c6099691bd2986878094ba39dbe36">igrid</a></td></tr>
+<tr class="memdesc:ad11c6099691bd2986878094ba39dbe36"><td class="mdescLeft">&#160;</td><td class="mdescRight">grid number of MIPS <br /></td></tr>
 <tr class="separator:ad11c6099691bd2986878094ba39dbe36"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ada12bd8d27578bfaee6d695d301b1bb7"><td class="memItemLeft" align="right" valign="top"><a id="ada12bd8d27578bfaee6d695d301b1bb7"></a>
-real(dp), public&#160;</td><td class="memItemRight" valign="bottom"><b>sedge</b> = 0.98_DP</td></tr>
+real(dp), public&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecylindrical__coord__mod.html#ada12bd8d27578bfaee6d695d301b1bb7">sedge</a> = 0.98_DP</td></tr>
+<tr class="memdesc:ada12bd8d27578bfaee6d695d301b1bb7"><td class="mdescLeft">&#160;</td><td class="mdescRight">the edge toroidal flux (default) <br /></td></tr>
 <tr class="separator:ada12bd8d27578bfaee6d695d301b1bb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7145633d635133fc90567f903569ed0d"><td class="memItemLeft" align="right" valign="top"><a id="a7145633d635133fc90567f903569ed0d"></a>
-real(dp), public&#160;</td><td class="memItemRight" valign="bottom"><b>pi2m</b></td></tr>
+real(dp), public&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecylindrical__coord__mod.html#a7145633d635133fc90567f903569ed0d">pi2m</a></td></tr>
+<tr class="memdesc:a7145633d635133fc90567f903569ed0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">one toroidal field period [rad] <br /></td></tr>
 <tr class="separator:a7145633d635133fc90567f903569ed0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac9ec630512eb20cf990e3b2a87524778"><td class="memItemLeft" align="right" valign="top"><a id="ac9ec630512eb20cf990e3b2a87524778"></a>
-real(dp), public&#160;</td><td class="memItemRight" valign="bottom"><b>rmaxb</b></td></tr>
+real(dp), public&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecylindrical__coord__mod.html#ac9ec630512eb20cf990e3b2a87524778">rmaxb</a></td></tr>
+<tr class="memdesc:ac9ec630512eb20cf990e3b2a87524778"><td class="mdescLeft">&#160;</td><td class="mdescRight">R_max of computational domain [m]. <br /></td></tr>
 <tr class="separator:ac9ec630512eb20cf990e3b2a87524778"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae8feecdd1ad186b7740f6821846abc1c"><td class="memItemLeft" align="right" valign="top"><a id="ae8feecdd1ad186b7740f6821846abc1c"></a>
-real(dp), public&#160;</td><td class="memItemRight" valign="bottom"><b>rminb</b></td></tr>
+real(dp), public&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecylindrical__coord__mod.html#ae8feecdd1ad186b7740f6821846abc1c">rminb</a></td></tr>
+<tr class="memdesc:ae8feecdd1ad186b7740f6821846abc1c"><td class="mdescLeft">&#160;</td><td class="mdescRight">R_min of computational domain [m]. <br /></td></tr>
 <tr class="separator:ae8feecdd1ad186b7740f6821846abc1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a141ae31254f0b85b545efada20f2e7f0"><td class="memItemLeft" align="right" valign="top"><a id="a141ae31254f0b85b545efada20f2e7f0"></a>
-real(dp), public&#160;</td><td class="memItemRight" valign="bottom"><b>zmaxb</b></td></tr>
+real(dp), public&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecylindrical__coord__mod.html#a141ae31254f0b85b545efada20f2e7f0">zmaxb</a></td></tr>
+<tr class="memdesc:a141ae31254f0b85b545efada20f2e7f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Z_max of computational domain [m]. <br /></td></tr>
 <tr class="separator:a141ae31254f0b85b545efada20f2e7f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5c8e10ba60b65350a2e919c3ce51db0a"><td class="memItemLeft" align="right" valign="top"><a id="a5c8e10ba60b65350a2e919c3ce51db0a"></a>
-real(dp), public&#160;</td><td class="memItemRight" valign="bottom"><b>zminb</b></td></tr>
+real(dp), public&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecylindrical__coord__mod.html#a5c8e10ba60b65350a2e919c3ce51db0a">zminb</a></td></tr>
+<tr class="memdesc:a5c8e10ba60b65350a2e919c3ce51db0a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Z_min of the computational domain [m]. <br /></td></tr>
 <tr class="separator:a5c8e10ba60b65350a2e919c3ce51db0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a924bc1abe04acebc6ed5f6840bdcbed9"><td class="memItemLeft" align="right" valign="top"><a id="a924bc1abe04acebc6ed5f6840bdcbed9"></a>
-real(dp), public&#160;</td><td class="memItemRight" valign="bottom"><b>delrb</b></td></tr>
+real(dp), public&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecylindrical__coord__mod.html#a924bc1abe04acebc6ed5f6840bdcbed9">delrb</a></td></tr>
+<tr class="memdesc:a924bc1abe04acebc6ed5f6840bdcbed9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Delta_R [m]. <br /></td></tr>
 <tr class="separator:a924bc1abe04acebc6ed5f6840bdcbed9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a14b02858c1ccbf5bda0721dcab53c3cd"><td class="memItemLeft" align="right" valign="top"><a id="a14b02858c1ccbf5bda0721dcab53c3cd"></a>
-real(dp), public&#160;</td><td class="memItemRight" valign="bottom"><b>delzb</b></td></tr>
+real(dp), public&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecylindrical__coord__mod.html#a14b02858c1ccbf5bda0721dcab53c3cd">delzb</a></td></tr>
+<tr class="memdesc:a14b02858c1ccbf5bda0721dcab53c3cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Delta_Z [m]. <br /></td></tr>
 <tr class="separator:a14b02858c1ccbf5bda0721dcab53c3cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af8370b814288091ec2ad4e90b6606303"><td class="memItemLeft" align="right" valign="top"><a id="af8370b814288091ec2ad4e90b6606303"></a>
-real(dp), public&#160;</td><td class="memItemRight" valign="bottom"><b>badjust</b> = 1.0_DP</td></tr>
+real(dp), public&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecylindrical__coord__mod.html#af8370b814288091ec2ad4e90b6606303">badjust</a> = 1.0_DP</td></tr>
+<tr class="memdesc:af8370b814288091ec2ad4e90b6606303"><td class="mdescLeft">&#160;</td><td class="mdescRight">normalization factor of magnetic field <br /></td></tr>
 <tr class="separator:af8370b814288091ec2ad4e90b6606303"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0dc915937b643cdcaad52a3e46848600"><td class="memItemLeft" align="right" valign="top"><a id="a0dc915937b643cdcaad52a3e46848600"></a>
-real(dp), public&#160;</td><td class="memItemRight" valign="bottom"><b>bnorm</b> = 3.0_DP</td></tr>
+real(dp), public&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecylindrical__coord__mod.html#a0dc915937b643cdcaad52a3e46848600">bnorm</a> = 3.0_DP</td></tr>
+<tr class="memdesc:a0dc915937b643cdcaad52a3e46848600"><td class="mdescLeft">&#160;</td><td class="mdescRight">normalization factor of magnetic field <br /></td></tr>
 <tr class="separator:a0dc915937b643cdcaad52a3e46848600"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abd2f2d7bcc4b8a669c0a26f25009777b"><td class="memItemLeft" align="right" valign="top"><a id="abd2f2d7bcc4b8a669c0a26f25009777b"></a>
-real(dp), dimension(500), public&#160;</td><td class="memItemRight" valign="bottom"><b>cj</b> = 0.0_DP</td></tr>
+real(dp), dimension(500), public&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecylindrical__coord__mod.html#abd2f2d7bcc4b8a669c0a26f25009777b">cj</a> = 0.0_DP</td></tr>
+<tr class="memdesc:abd2f2d7bcc4b8a669c0a26f25009777b"><td class="mdescLeft">&#160;</td><td class="mdescRight">work array to store coil current in each coils [A] <br /></td></tr>
 <tr class="separator:abd2f2d7bcc4b8a669c0a26f25009777b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8ccf770b2214cf48ab4d3943078511f7"><td class="memItemLeft" align="right" valign="top"><a id="a8ccf770b2214cf48ab4d3943078511f7"></a>
-real(dp), dimension(500), public&#160;</td><td class="memItemRight" valign="bottom"><b>extcur</b> = 0.0_DP</td></tr>
+real(dp), dimension(500), public&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecylindrical__coord__mod.html#a8ccf770b2214cf48ab4d3943078511f7">extcur</a> = 0.0_DP</td></tr>
+<tr class="memdesc:a8ccf770b2214cf48ab4d3943078511f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">work array to store coil current in each coils [A] <br /></td></tr>
 <tr class="separator:a8ccf770b2214cf48ab4d3943078511f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aecbc7832ad469f8f67428639546d086f"><td class="memItemLeft" align="right" valign="top"><a id="aecbc7832ad469f8f67428639546d086f"></a>
-real(dp), dimension(500), public&#160;</td><td class="memItemRight" valign="bottom"><b>cturn</b> = 1.0_DP</td></tr>
+real(dp), dimension(500), public&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecylindrical__coord__mod.html#aecbc7832ad469f8f67428639546d086f">cturn</a> = 1.0_DP</td></tr>
+<tr class="memdesc:aecbc7832ad469f8f67428639546d086f"><td class="mdescLeft">&#160;</td><td class="mdescRight">work array to store coil current in each coils [A] <br /></td></tr>
 <tr class="separator:aecbc7832ad469f8f67428639546d086f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac0acf948fb298a81d0b2ecf15d643270"><td class="memItemLeft" align="right" valign="top"><a id="ac0acf948fb298a81d0b2ecf15d643270"></a>
-real(dp), dimension(500), public&#160;</td><td class="memItemRight" valign="bottom"><b>cfact</b> = 1.0_DP</td></tr>
+real(dp), dimension(500), public&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecylindrical__coord__mod.html#ac0acf948fb298a81d0b2ecf15d643270">cfact</a> = 1.0_DP</td></tr>
+<tr class="memdesc:ac0acf948fb298a81d0b2ecf15d643270"><td class="mdescLeft">&#160;</td><td class="mdescRight">work array to store coil current in each coils [A] <br /></td></tr>
 <tr class="separator:ac0acf948fb298a81d0b2ecf15d643270"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab64192d792528a9dcf4c8af3391c8d05"><td class="memItemLeft" align="right" valign="top"><a id="ab64192d792528a9dcf4c8af3391c8d05"></a>
-real(dp), dimension(500), public&#160;</td><td class="memItemRight" valign="bottom"><b>cpfcoil</b> = 1.0_DP</td></tr>
+real(dp), dimension(500), public&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecylindrical__coord__mod.html#ab64192d792528a9dcf4c8af3391c8d05">cpfcoil</a> = 1.0_DP</td></tr>
+<tr class="memdesc:ab64192d792528a9dcf4c8af3391c8d05"><td class="mdescLeft">&#160;</td><td class="mdescRight">factors of PF coils to fix the magnetic axis <br /></td></tr>
 <tr class="separator:ab64192d792528a9dcf4c8af3391c8d05"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1032650e7a9bb4cb914fc838a549a26c"><td class="memItemLeft" align="right" valign="top"><a id="a1032650e7a9bb4cb914fc838a549a26c"></a>
-real(dp), dimension(4), public&#160;</td><td class="memItemRight" valign="bottom"><b>mbound</b> = 0.0_DP</td></tr>
+real(dp), dimension(4), public&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecylindrical__coord__mod.html#a1032650e7a9bb4cb914fc838a549a26c">mbound</a> = 0.0_DP</td></tr>
+<tr class="memdesc:a1032650e7a9bb4cb914fc838a549a26c"><td class="mdescLeft">&#160;</td><td class="mdescRight">1D array to fix the boundary in MIPS <br /></td></tr>
 <tr class="separator:a1032650e7a9bb4cb914fc838a549a26c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6388cc40f1bf305d32aae1a73e151b39"><td class="memItemLeft" align="right" valign="top"><a id="a6388cc40f1bf305d32aae1a73e151b39"></a>
-real(dp), dimension(:), allocatable, public&#160;</td><td class="memItemRight" valign="bottom"><b>rg</b></td></tr>
+real(dp), dimension(:), allocatable, public&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecylindrical__coord__mod.html#a6388cc40f1bf305d32aae1a73e151b39">rg</a></td></tr>
+<tr class="memdesc:a6388cc40f1bf305d32aae1a73e151b39"><td class="mdescLeft">&#160;</td><td class="mdescRight">1D array of R [m] <br /></td></tr>
 <tr class="separator:a6388cc40f1bf305d32aae1a73e151b39"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae2de0a22f76ac172810cfedf39a74344"><td class="memItemLeft" align="right" valign="top"><a id="ae2de0a22f76ac172810cfedf39a74344"></a>
-real(dp), dimension(:), allocatable, public&#160;</td><td class="memItemRight" valign="bottom"><b>zg</b></td></tr>
+real(dp), dimension(:), allocatable, public&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecylindrical__coord__mod.html#ae2de0a22f76ac172810cfedf39a74344">zg</a></td></tr>
+<tr class="memdesc:ae2de0a22f76ac172810cfedf39a74344"><td class="mdescLeft">&#160;</td><td class="mdescRight">1D array of Z [m] <br /></td></tr>
 <tr class="separator:ae2de0a22f76ac172810cfedf39a74344"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><dl class="section author"><dt>Author</dt><dd>Yasuhiro Suzuki, National Institute for Fusion Science </dd></dl>
+<div class="textblock"><p>subroutines for the interpolation and derivation of the magnetic field and normalized flux distribution </p>
+<dl class="section author"><dt>Author</dt><dd>Yasuhiro Suzuki, National Institute for Fusion Science </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>19 Apr 2020 </dd></dl>
 <dl class="section version"><dt>Version</dt><dd>Initial Version </dd></dl>
-</div></div><!-- contents -->
+</div><h2 class="groupheader">Function/Subroutine Documentation</h2>
+<a id="a6f18caa94d7e1e946b0309b3906344f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f18caa94d7e1e946b0309b3906344f2">&#9670;&nbsp;</a></span>mgval1()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">subroutine, public cylindrical_coord_mod::mgval1 </td>
+          <td>(</td>
+          <td class="paramtype">real(dp), intent(in)&#160;</td>
+          <td class="paramname"><em>r</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real(dp), intent(in)&#160;</td>
+          <td class="paramname"><em>phi</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real(dp), intent(in)&#160;</td>
+          <td class="paramname"><em>z</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real(dp), intent(out)&#160;</td>
+          <td class="paramname"><em>br</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real(dp), intent(out)&#160;</td>
+          <td class="paramname"><em>bp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real(dp), intent(out)&#160;</td>
+          <td class="paramname"><em>bz</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real(dp), intent(out)&#160;</td>
+          <td class="paramname"><em>bb</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A subroutine that interpolates magnetic fields, ( \(B_R, B_{\phi}, B_Z, B\)), on a given coordinate, ( \(R, \phi, Z\)) </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">r</td><td>\( R \) [m] </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">phi</td><td>\( \phi \) [rad] </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">z</td><td>\( Z \) [m] </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">br</td><td>\( B_R \) [T] </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">bp</td><td>\( B_{\phi} \) [T] </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">bz</td><td>\( B_Z \) [T] </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">bb</td><td>\( |B| \) [T] </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="cylindrical__coord__mod_8f90_source.html#l02051">2051</a> of file <a class="el" href="cylindrical__coord__mod_8f90_source.html">cylindrical_coord_mod.f90</a>.</p>
+
+</div>
+</div>
+<a id="a88326bcc4316d521f4a59518f80190ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a88326bcc4316d521f4a59518f80190ed">&#9670;&nbsp;</a></span>mgval2()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">subroutine, public cylindrical_coord_mod::mgval2 </td>
+          <td>(</td>
+          <td class="paramtype">real(dp), intent(in)&#160;</td>
+          <td class="paramname"><em>r</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real(dp), intent(in)&#160;</td>
+          <td class="paramname"><em>phi</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real(dp), intent(in)&#160;</td>
+          <td class="paramname"><em>z</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real(dp), dimension(l3d), intent(out)&#160;</td>
+          <td class="paramname"><em>b</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real(dp), dimension(l3d), intent(out)&#160;</td>
+          <td class="paramname"><em>dbdr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real(dp), dimension(l3d), intent(out)&#160;</td>
+          <td class="paramname"><em>dbdp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real(dp), dimension(l3d), intent(out)&#160;</td>
+          <td class="paramname"><em>dbdz</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A subroutine that interpolates magnetic fields, ( \(B_R, B_{\phi}, B_Z, B\)), and calculates 1st derivative, ( \( \partial \textbf{B} / \partial R, \partial \textbf{B} / \partial \phi, \partial \textbf{B} / \partial Z \)), on a given coordinate, ( \(R, \phi, Z\)) </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">r</td><td>\( R \) [m] </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">phi</td><td>\( \phi \) [rad] </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">z</td><td>\( Z \) [m] </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">b</td><td>( \( B_R, B_{\phi}, B_Z, |B| \))[T] </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">dbdr</td><td>( \( \partial B_R / \partial R, \partial B_{\phi} / \partial R, \partial B_Z / \partial R, \partial B / \partial R \)) [T/m] </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">dbdp</td><td>( \( \partial B_R / \partial \phi, \partial B_{\phi} / \partial \phi, \partial B_Z / \partial \phi, \partial B / \partial \phi \)) [T/rad] </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">dbdz</td><td>( \( \partial B_R / \partial Z, \partial B_{\phi} / \partial Z, \partial B_Z / \partial Z, \partial B / \partial Z \)) [T/m] </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="cylindrical__coord__mod_8f90_source.html#l02100">2100</a> of file <a class="el" href="cylindrical__coord__mod_8f90_source.html">cylindrical_coord_mod.f90</a>.</p>
+
+</div>
+</div>
+<a id="afb8287db9ebd97dc624cb00bebba2603"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afb8287db9ebd97dc624cb00bebba2603">&#9670;&nbsp;</a></span>mgval3()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">subroutine, public cylindrical_coord_mod::mgval3 </td>
+          <td>(</td>
+          <td class="paramtype">real(dp), intent(in)&#160;</td>
+          <td class="paramname"><em>r</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real(dp), intent(in)&#160;</td>
+          <td class="paramname"><em>phi</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real(dp), intent(in)&#160;</td>
+          <td class="paramname"><em>z</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real(dp), intent(out)&#160;</td>
+          <td class="paramname"><em>s</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A subroutine that interpolates normalized flux on a given coordinate, ( \(R, \phi, Z\)) </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">r</td><td>\( R \) [m] </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">phi</td><td>\( \phi \) [rad] </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">z</td><td>\( Z \) [m] </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">s</td><td>normalized flux </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="cylindrical__coord__mod_8f90_source.html#l02149">2149</a> of file <a class="el" href="cylindrical__coord__mod_8f90_source.html">cylindrical_coord_mod.f90</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="a744e99c8b039839d56fc0dc86029f8be"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a744e99c8b039839d56fc0dc86029f8be">&#9670;&nbsp;</a></span>file_format</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">character(len=6), public cylindrical_coord_mod::file_format = 'bin'</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>FILE_FORMAT sets the file format. </p>
+<ul>
+<li>1. bin: Fortran binary </li>
+<li>2. netcdf: netCDF (optional) </li>
+<li>3. hdf5: HDF5 <em></em>(not implemnted yet) </li>
+</ul>
+
+<p class="definition">Definition at line <a class="el" href="cylindrical__coord__mod_8f90_source.html#l00058">58</a> of file <a class="el" href="cylindrical__coord__mod_8f90_source.html">cylindrical_coord_mod.f90</a>.</p>
+
+</div>
+</div>
+<a id="af595c644b87a7e6806629fcbaef02382"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af595c644b87a7e6806629fcbaef02382">&#9670;&nbsp;</a></span>flx_form</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">character(len=20), public cylindrical_coord_mod::flx_form = 'xss'</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>FLX_FORM prescribes the table format of the flux distribution. </p>
+<ul>
+<li>1. xss: file format used in SMAP </li>
+<li>2. flx: file format used in HINT </li>
+<li>3. eqdsk: file format used in EFIT </li>
+<li>4. eqdata: file format used in TOPICS </li>
+</ul>
+
+<p class="definition">Definition at line <a class="el" href="cylindrical__coord__mod_8f90_source.html#l00108">108</a> of file <a class="el" href="cylindrical__coord__mod_8f90_source.html">cylindrical_coord_mod.f90</a>.</p>
+
+</div>
+</div>
+<a id="a9494c9050d74843d4799703b3bddf898"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9494c9050d74843d4799703b3bddf898">&#9670;&nbsp;</a></span>mag_form</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">character(len=20), public cylindrical_coord_mod::mag_form = ''</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>MAG_FORM prescribes the table format of the magnetic field. </p>
+<ul>
+<li>1. mgrid: file format used in MAKEGRID </li>
+<li>2. mgo: file format used in KMAG/KMAG2 </li>
+<li>3. mag: file format for the equilibrium field used in HINT </li>
+<li>4. vac: file format for the vacuum field used in HINT </li>
+<li>5. movie: file format used in the MIPS code </li>
+<li>6. mips_eq: file format for the equilibrium field used in MIPS </li>
+</ul>
+
+<p class="definition">Definition at line <a class="el" href="cylindrical__coord__mod_8f90_source.html#l00077">77</a> of file <a class="el" href="cylindrical__coord__mod_8f90_source.html">cylindrical_coord_mod.f90</a>.</p>
+
+</div>
+</div>
+<a id="a4fd4d1861d3537ad62405615e827de59"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4fd4d1861d3537ad62405615e827de59">&#9670;&nbsp;</a></span>version</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">character(len=20), public cylindrical_coord_mod::version = ''</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>VERSION prescribes the version for the old legacy format. </p>
+<ul>
+<li>1. ver2: legacy HINT2 format </li>
+</ul>
+
+<p class="definition">Definition at line <a class="el" href="cylindrical__coord__mod_8f90_source.html#l00085">85</a> of file <a class="el" href="cylindrical__coord__mod_8f90_source.html">cylindrical_coord_mod.f90</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

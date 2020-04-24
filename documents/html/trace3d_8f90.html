@@ -83,6 +83,7 @@ $(function() {
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions/Subroutines</h2></td></tr>
 <tr class="memitem:ad96b8c1ede010dfbb240adf15770ce1f"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="trace3d_8f90.html#ad96b8c1ede010dfbb240adf15770ce1f">trace3d</a></td></tr>
+<tr class="memdesc:ad96b8c1ede010dfbb240adf15770ce1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">This routine traces the field line along the integral variable, \( l \).  <a href="#ad96b8c1ede010dfbb240adf15770ce1f">More...</a><br /></td></tr>
 <tr class="separator:ad96b8c1ede010dfbb240adf15770ce1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function/Subroutine Documentation</h2>
@@ -100,11 +101,16 @@ Functions/Subroutines</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<dl class="section author"><dt>Author</dt><dd>Yasuhiro Suzuki, National Institute for Fusion Science </dd></dl>
-<dl class="section date"><dt>Date</dt><dd>19 Apr 2020 </dd></dl>
+
+<p>This routine traces the field line along the integral variable, \( l \). </p>
+<dl class="section author"><dt>Author</dt><dd>Yasuhiro Suzuki, National Institute for Fusion Science</dd></dl>
+<p>This routine integrates an equation of the field lien as follows, </p><p class="formulaDsp">
+\begin{eqnarray} \frac{d R}{dl} &amp;=&amp; \frac{B_R}{B} \\ \frac{d \phi}{dl} &amp;=&amp; \frac{B_{\phi}}{RB} \\ \frac{d Z}{dl} &amp;=&amp; \frac{B_Z}{B} \end{eqnarray}
+</p>
+ <dl class="section date"><dt>Date</dt><dd>19 Apr 2020 </dd></dl>
 <dl class="section version"><dt>Version</dt><dd>Initial Version </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="trace3d_8f90_source.html#l00020">20</a> of file <a class="el" href="trace3d_8f90_source.html">trace3d.f90</a>.</p>
+<p class="definition">Definition at line <a class="el" href="trace3d_8f90_source.html#l00028">28</a> of file <a class="el" href="trace3d_8f90_source.html">trace3d.f90</a>.</p>
 
 </div>
 </div>

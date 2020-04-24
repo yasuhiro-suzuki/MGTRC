@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['mgtrc',['MGTRC',['../index.html',1,'']]]
+  ['mgtrc',['MGTRC',['../md_README.html',1,'']]]
 ];
