@@ -1,0 +1,25 @@
+{
+	"settings":{
+	  "mode": "2D",
+	  "lc_min": 1.0E+00,
+	  "lc_max": 1.0E+03
+	},
+	"dimensions":{
+       	  "mtor": 10,
+       	  "nr": 171,
+       	  "nz": 171,
+          "ntor": 36,
+          "rmin": 2.2,
+          "rmax": 5.6,
+          "zmin": -1.7,
+          "zmax": 1.7
+	},
+	"profiles":{
+          "reff_min": 0.0,
+          "reff_max": 0.7,
+          "R_min": 3.5,
+          "R_max": 4.7,
+          "s_min": 0.0,
+          "s_max": 1.1
+	}
+}
