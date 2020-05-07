@@ -42,7 +42,7 @@ MODULE plot_mod
 !
 !
   INTEGER :: ncontb  =  0,  &
-    &        ncxy    =  51, &
+    &        ncxyb   =  51, &
     &        ibspec  =  0
   REAL(DP) :: bmaxb       =  5.0_DP, &
     &         bminb       =  1.0_DP, &
@@ -75,11 +75,11 @@ MODULE plot_mod
     &         dzb,   &
     &         dcont, &
     &         tr(6)
-  REAL(DP), ALLOCATABLE :: xx(:),     &
-    &                      yy(:),     &
-    &                      clevel(:), &
-    &                      rgb(:),    &
-    &                      zgb(:),    &
+  REAL(DP), ALLOCATABLE :: xx(:),      &
+    &                      yy(:),      &
+    &                      clevelb(:), &
+    &                      rgb(:),     &
+    &                      zgb(:),     &
     &                      bcont(:,:)
   CHARACTER(LEN=1) :: defined
   CHARACTER(LEN=100) :: label
@@ -90,7 +90,7 @@ MODULE plot_mod
     &       fig_file,           & 
     &       contour_mode,       &
     &       ncontb,             &
-    &       ncxy,               &
+    &       ncxyb,              &
     &       bminb,              &
     &       bmaxb,              &
     &       ibspec,             &
@@ -231,18 +231,18 @@ CONTAINS
 
 #ifdef PLPLOT
     IF(ncontb <= 0) ncontb =  31
-    IF(ncxy   <= 0) ncxy   =  51
+    IF(ncxyb  <= 0) ncxyb  =  51
 
-    ALLOCATE(clevel(ncontb), rgb(ncxy), zgb(ncxy), bcont(ncxy,ncxy))
+    ALLOCATE(clevelb(ncontb), rgb(ncxyb), zgb(ncxyb), bcont(ncxyb,ncxyb))
 
-    drb = (rmaxb - rminb) / (ncxy - 1)
-    dzb = (zmaxb - zminb) / (ncxy - 1)
+    drb = (rmaxb - rminb) / (ncxyb - 1)
+    dzb = (zmaxb - zminb) / (ncxyb - 1)
 
-    DO i=1,ncxy
+    DO i=1,ncxyb
       rgb(i) =  rminb + drb * (i - 1)
     END DO
 
-    DO j=1,ncxy
+    DO j=1,ncxyb
       zgb(j) =  zminb + dzb * (j - 1)
     END DO
 
@@ -272,8 +272,8 @@ CONTAINS
     IF(bminb == 0.0_DP) bminb =  0.0_DP
     IF(bmaxb == 0.0_DP) bmaxb =  10.0_DP
 
-    DO j=1,ncxy
-      DO i=1,ncxy
+    DO j=1,ncxyb
+      DO i=1,ncxyb
         CALL mgval1(rgb(i), pcros, zgb(j), br, bt, bz, bcont(i,j))
         IF(bcont(i,j) < bminb) bcont(i,j) =  bminb
         IF(bcont(i,j) > bmaxb) bcont(i,j) =  bmaxb
@@ -283,7 +283,7 @@ CONTAINS
     dcont = (bmaxb - bminb) / (ncontb - 1)
 
     DO i=1,ncontb
-      clevel(i) = bminb + dcont * (i - 1)
+      clevelb(i) = bminb + dcont * (i - 1)
     END DO
 
     SELECT CASE(TRIM(contour_mode))
@@ -292,9 +292,9 @@ CONTAINS
 
         CALL plcol0(5)
 #if defined PLPLOT77
-        CALL plcont(bcont(:,:), ncxy, ncxy, 1, ncxy, 1, ncxy, clevel(:), ncontb)
+        CALL plcont(bcont(:,:), ncxyb, ncxyb, 1, ncxyb, 1, ncxyb, clevelb(:), ncontb)
 #else
-        CALL plcont(bcont(:,:), 1, ncxy, 1, ncxy, clevel(:))
+        CALL plcont(bcont(:,:), 1, ncxyb, 1, ncxyb, clevelb(:))
 #endif
 
       CASE('surface')
@@ -304,18 +304,18 @@ CONTAINS
         cont_width =  0
 
 #if defined PLPLOT77
-        CALL plshades0(bcont(:,:), ncxy, ncxy, defined, rminb, rmaxb, zminb, zmaxb, clevel(:), ncontb, fill_width, cont_color, cont_width, ncxy)
+        CALL plshades0(bcont(:,:), ncxyb, ncxyb, defined, rminb, rmaxb, zminb, zmaxb, clevelb(:), ncontb, fill_width, cont_color, cont_width, ncxyb)
 #else
-        CALL plshades(bcont(:,:), rminb, rmaxb, zminb, zmaxb, clevel(:), fill_width, cont_color, cont_width, .true.)
+        CALL plshades(bcont(:,:), rminb, rmaxb, zminb, zmaxb, clevelb(:), fill_width, cont_color, cont_width, .true.)
 #endif
 
       CASE DEFAULT
 
         CALL plcol0(5)
 #if defined PLPLOT77
-        CALL plcont(bcont(:,:), ncxy, ncxy, 1, ncxy, 1, ncxy, clevel(:), ncontb)
+        CALL plcont(bcont(:,:), ncxyb, ncxyb, 1, ncxyb, 1, ncxyb, clevelb(:), ncontb)
 #else
-        CALL plcont(bcont(:,:), 1, ncxy, 1, ncxy, clevel(:))
+        CALL plcont(bcont(:,:), 1, ncxyb, 1, ncxyb, clevelb(:))
 #endif
 
         fill_width =  2
@@ -323,9 +323,9 @@ CONTAINS
         cont_width =  0
 
 #if defined PLPLOT77
-        CALL plshades0(bcont(:,:), ncxy, ncxy, defined, rminb, rmaxb, zminb, zmaxb, clevel(:), ncontb, fill_width, cont_color, cont_width, ncxy)
+        CALL plshades0(bcont(:,:), ncxyb, ncxyb, defined, rminb, rmaxb, zminb, zmaxb, clevelb(:), ncontb, fill_width, cont_color, cont_width, ncxyb)
 #else
-        CALL plshades(bcont(:,:), rminb, rmaxb, zminb, zmaxb, clevel(:), fill_width, cont_color, cont_width, .true.)
+        CALL plshades(bcont(:,:), rminb, rmaxb, zminb, zmaxb, clevelb(:), fill_width, cont_color, cont_width, .true.)
 #endif
 
     END SELECT
@@ -334,9 +334,9 @@ CONTAINS
       loop6040 : DO i=1,ibspec
         CALL plcol0(4)
 #if defined PLPLOT77
-        CALL plcont(bcont(:,:), ncxy, ncxy, 1, ncxy, 1, ncxy, bspec(i), 1)
+        CALL plcont(bcont(:,:), ncxyb, ncxyb, 1, ncxyb, 1, ncxyb, bspec(i), 1)
 #else
-        CALL plcont(bcont(:,:), 1, ncxy, 1, ncxy, bspec(i:i))
+        CALL plcont(bcont(:,:), 1, ncxyb, 1, ncxyb, bspec(i:i))
 #endif
       END DO loop6040
     END IF
@@ -351,7 +351,7 @@ CONTAINS
 
 
 #ifdef PLPLOT
-    DEALLOCATE(clevel, rgb, zgb, bcont)
+    DEALLOCATE(clevelb, rgb, zgb, bcont)
 #endif
 
 

@@ -73,7 +73,7 @@ SUBROUTINE readin
     &                               fig_file,       &
     &                               contour_mode,   &
     &                               ncontb,         &
-    &                               ncxy,           &
+    &                               ncxyb,          &
     &                               bminb,          &
     &                               bmaxb,          &
     &                               ibspec,         &
@@ -123,7 +123,7 @@ SUBROUTINE readin
     &               rbtor0,         &
     &               lcontb,         &
     &               ncontb,         &
-    &               ncxy,           &
+    &               ncxyb,          &
     &               bminb,          &
     &               bmaxb,          &
     &               ibspec,         &
