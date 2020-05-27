@@ -438,7 +438,7 @@ SUBROUTINE cal_flxqnt
           END DO loop_check
         END DO
 
-        ri(ntheta) = ri(1)
+        ri(ntheta1) = ri(1)
 
         DO i=1,ntheta1
           rsurfi(js,n,i) =  ri(i) * COS(thetai(i)) + axisr(n)
