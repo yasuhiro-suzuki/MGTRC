@@ -56,6 +56,7 @@ SUBROUTINE cal_flxqnt
 
   INTEGER :: ntheta,     &
     &        ntheta1,    &
+    &        ntheta2,    &
     &        m_turn,     &
     &        m_turn_old, &
     &        i_index,    &
@@ -113,6 +114,9 @@ SUBROUTINE cal_flxqnt
     &         zmax2,   &
     &         elng1,   &
     &         elng2,   &
+    &         darc,    &
+    &         arc1,    &
+    &         arc2,    &
     &         x1,      &
     &         y1,      &
     &         x2,      &
@@ -135,6 +139,7 @@ SUBROUTINE cal_flxqnt
     &                      volume(:),     &
     &                      lc(:),         &
     &                      elong(:),      &
+    &                      delarc(:),     &
     &                      axisr(:),      &
     &                      axisz(:),      &
     &                      wrk1(:),       &
@@ -144,6 +149,8 @@ SUBROUTINE cal_flxqnt
     &                      thetai(:),     &
     &                      rsurfk(:,:),   &
     &                      zsurfk(:,:),   &
+    &                      rsurfk2(:,:),  &
+    &                      zsurfk2(:,:),  &
     &                      rsurfi(:,:,:), &
     &                      zsurfi(:,:,:)
   CHARACTER(LEN=100) :: fmt
@@ -178,6 +185,7 @@ SUBROUTINE cal_flxqnt
   lnx     =  nstep * ntheta
 
   ntheta1 =  361
+  ntheta2 =  ntheta / 2
 
   fmt = '(A11, I12)'
 
@@ -192,8 +200,8 @@ SUBROUTINE cal_flxqnt
   PRINT *
 
   ALLOCATE(f0(0:mr,ln), f(0:1,ln,lnx), icount(0:mr), iout(0:mr))
-  ALLOCATE(rav1(0:mr), rav2(0:mr), ss(0:mr), phit(0:mr), psip(0:mr), iota1(0:mr), iota2(0:mr), vp(0:mr), volume(0:mr), lc(0:mr), elong(0:mr))
-  ALLOCATE(axisr(nstep), axisz(nstep), wrk1(lnx), rk(-1:ntheta+2), thetak(-1:ntheta+2), ri(ntheta1), thetai(ntheta1), rsurfk(nstep,ntheta), zsurfk(nstep,ntheta), rsurfi(mr,nstep,ntheta), zsurfi(mr,nstep,ntheta))
+  ALLOCATE(rav1(0:mr), rav2(0:mr), ss(0:mr), phit(0:mr), psip(0:mr), iota1(0:mr), iota2(0:mr), vp(0:mr), volume(0:mr), lc(0:mr), elong(0:mr), delarc(0:mr))
+  ALLOCATE(axisr(nstep), axisz(nstep), wrk1(lnx), rk(-1:ntheta+2), thetak(-1:ntheta+2), ri(ntheta1), thetai(ntheta1), rsurfk(nstep,ntheta), zsurfk(nstep,ntheta), rsurfk2(nstep,ntheta2), zsurfk2(nstep,ntheta2), rsurfi(mr,nstep,ntheta1), zsurfi(mr,nstep,ntheta1))
 
   icount(:) =  0
   iout(:)   =  0
@@ -209,6 +217,7 @@ SUBROUTINE cal_flxqnt
   volume(:) =  0.0_DP
   lc(:)     =  0.0_DP
   elong(:)  =  0.0_DP
+  delarc(:) =  0.0_DP
 
   dtheta =  pi2 / (ntheta1 - 1)
   DO i=1,ntheta1
@@ -300,7 +309,7 @@ SUBROUTINE cal_flxqnt
 
   fmt = '(A)'
 
-  PRINT fmt, '   mr  iout   icount     R        Z       <r>(2)      iota(1)      iota(2)         Vp       elongation'
+  PRINT fmt, '   mr  iout   icount     R        Z       <r>(2)      iota(1)      iota(2)         Vp       elongation    Delta_arc'
   PRINT fmt, '                                        (int:rdl/B)  (dth/dphi)   (Rbp/rbt)    (int:dl/B)'
 
   fmt = '(2I5, I10, 2F9.5, 20ES13.5)'
@@ -392,9 +401,34 @@ SUBROUTINE cal_flxqnt
         END DO
       END DO
 
+      DO i=1,ntheta2
+        DO n=1,nstep
+          k            = (i - 1) * nstep + n
+          rsurfk2(n,i) =  f(1,1,k)
+          zsurfk2(n,i) =  f(1,2,k)
+        END DO
+      END DO
+
       DO n=1,nstep
 
-        CALL order(ntheta, rsurfk(n,:), zsurfk(n,:), axisr(n), axisz(n))
+        CALL order(ntheta,  rsurfk(n,:),  zsurfk(n,:),  axisr(n), axisz(n))
+        CALL order(ntheta2, rsurfk2(n,:), zsurfk2(n,:), axisr(n), axisz(n))
+
+        arc1 =  0.0_DP
+        DO i=1,ntheta-1
+          darc =  SQRT((rsurfk(n,i+1) - rsurfk(n,i))**2 + (zsurfk(n,i+1) - zsurfk(n,i))**2)
+          arc1 =  arc1 + darc
+        END DO
+        darc =  SQRT((rsurfk(n,1) - rsurfk(n,ntheta))**2 + (zsurfk(n,1) - zsurfk(n,ntheta))**2)
+        arc1 =  arc1 + darc
+
+        arc2 =  0.0_DP
+        DO i=1,ntheta2-1
+          darc =  SQRT((rsurfk2(n,i+1) - rsurfk2(n,i))**2 + (zsurfk2(n,i+1) - zsurfk2(n,i))**2)
+          arc2 =  arc2 + darc
+        END DO
+        darc =  SQRT((rsurfk2(n,1) - rsurfk2(n,ntheta2))**2 + (zsurfk2(n,1) - zsurfk2(n,ntheta2))**2)
+        arc2 =  arc2 + darc
 
         DO i=1,ntheta
           r     =  rsurfk(n,i) - axisr(n)
@@ -419,7 +453,7 @@ SUBROUTINE cal_flxqnt
           loop_check : DO j=-1,ntheta+2
             IF(thetak(j) > thetai(i))THEN
               dtheta =  thetak(j) - thetak(j-1)
-              IF(dtheta <= 0.2_DP)THEN
+              IF(dtheta <= 0.02_DP)THEN
                 ri(i) =  rk(j-1) + (rk(j) - rk(j-1)) * (thetai(i) - thetak(j-1)) / (thetak(j) - thetak(j-1))
               ELSE
                 th0   =  thetai(i)   - thetak(j-1)
@@ -445,26 +479,30 @@ SUBROUTINE cal_flxqnt
           zsurfi(js,n,i) =  ri(i) * SIN(thetai(i)) + axisz(n)
         END DO
 
+        delarc(js) =  delarc(js) + ABS(arc1 - arc2) / arc1
+
       END DO
 
-      rmin1     =  MINVAL(rsurfi(js,1,:))
-      rmax1     =  MAXVAL(rsurfi(js,1,:))
-      zmin1     =  MINVAL(zsurfi(js,1,:))
-      zmax1     =  MAXVAL(zsurfi(js,1,:))
+      rmin1      =  MINVAL(rsurfi(js,1,:))
+      rmax1      =  MAXVAL(rsurfi(js,1,:))
+      zmin1      =  MINVAL(zsurfi(js,1,:))
+      zmax1      =  MAXVAL(zsurfi(js,1,:))
 
-      rmin2     =  MINVAL(rsurfi(js,nstep/2+1,:))
-      rmax2     =  MAXVAL(rsurfi(js,nstep/2+1,:))
-      zmin2     =  MINVAL(zsurfi(js,nstep/2+1,:))
-      zmax2     =  MAXVAL(zsurfi(js,nstep/2+1,:))
+      rmin2      =  MINVAL(rsurfi(js,nstep/2+1,:))
+      rmax2      =  MAXVAL(rsurfi(js,nstep/2+1,:))
+      zmin2      =  MINVAL(zsurfi(js,nstep/2+1,:))
+      zmax2      =  MAXVAL(zsurfi(js,nstep/2+1,:))
 
-      elng1     = (zmax1 - zmin1) / (rmax1 - rmin1)
-      elng2     = (zmax2 - zmin2) / (rmax2 - rmin2)
+      elng1      = (zmax1 - zmin1) / (rmax1 - rmin1)
+      elng2      = (zmax2 - zmin2) / (rmax2 - rmin2)
 
-      elong(js) = (elng1 + elng2) / 2
+      elong(js)  = (elng1 + elng2) / 2
+
+      delarc(js) =  delarc(js) / nstep
 
     END IF
 
-    PRINT fmt, js, iout(js), icount(js), f0(js,1), f0(js,2), rav2(js), iota1(js), iota2(js), vp(js), elong(js)
+    PRINT fmt, js, iout(js), icount(js), f0(js,1), f0(js,2), rav2(js), iota1(js), iota2(js), vp(js), elong(js), delarc(js)
 
   END DO
 
@@ -588,9 +626,9 @@ SUBROUTINE cal_flxqnt
 
   END IF
 
-  DEALLOCATE(axisr, axisz, wrk1, rsurfk, zsurfk, rsurfi, zsurfi)
-  DEALLOCATE(rav1, rav2, ss, phit, psip, iota1, iota2, vp, volume, lc)
-  DEALLOCATE(f0, f)
+  DEALLOCATE(axisr, axisz, wrk1, rk, thetak, ri, thetai, rsurfk, zsurfk, rsurfk2, zsurfk2, rsurfi, zsurfi)
+  DEALLOCATE(rav1, rav2, ss, phit, psip, iota1, iota2, vp, volume, lc, elong, delarc)
+  DEALLOCATE(f0, f, icount, iout)
 
 
 END SUBROUTINE cal_flxqnt
