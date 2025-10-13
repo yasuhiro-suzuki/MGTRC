@@ -21,13 +21,15 @@ SUBROUTINE readin
   USE kind_spec
   USE file_mod,              ONLY : lfile,          &
     &                               plot_file_name, &
+    &                               start_file,     &
 #ifdef POINXY
     &                               xy_plot_file,   &
 #endif
 #ifdef LCOUT
     &                               lc_plot_file,   &
 #endif
-    &                               prof_file
+    &                               prof_file,      &
+    &                               vmec_file
   USE axis_mod,              ONLY : lrmagax,        &
     &                               rax0,           &
     &                               zax0,           &
@@ -38,9 +40,11 @@ SUBROUTINE readin
   USE fline_mod,             ONLY : mode,           &
     &                               def_start,      &
     &                               lupdown,        &
+    &                               lano,           &
     &                               lflxqnt,        &
     &                               lpoin,          &
     &                               lfigout,        &
+    &                               lvtkout,        &
     &                               lcontb,         &
     &                               mr,             &
     &                               nstep,          &
@@ -58,6 +62,7 @@ SUBROUTINE readin
     &                               sout,           &
     &                               rout,           &
     &                               zout,           &
+    &                               drho,           &
     &                               pcros_in
   USE cylindrical_coord_mod, ONLY : nlinp_coil_dat, &
     &                               mag_file,       &
@@ -68,7 +73,14 @@ SUBROUTINE readin
     &                               vessel_model,   &
     &                               vessel_file
   USE limiter_mod,           ONLY : llimiter
-  USE divertor_mod,          ONLY : ldivertor
+  USE divertor_mod,          ONLY : ldivertor,      &
+    &                               ldivertor_vtk,  &
+    &                               divertor_model, &
+    &                               num_nodes,      &
+    &                               num_elements,   &
+    &                               divertor_file,  &
+    &                               nodes_file,     &
+    &                               elements_file
   USE plot_mod,              ONLY : fig_format,     &
     &                               fig_file,       &
     &                               contour_mode,   &
@@ -87,15 +99,21 @@ SUBROUTINE readin
     &               fig_file,       &
     &               lpoin,          &
     &               lupdown,        &
+    &               lvtkout,        &
     &               mode,           &
     &               def_start,      &
     &               plot_file_name, &
+    &               lano,           &
     &               lvessel,        &
     &               lcheck_vessel,  &
     &               lvessel_vtk,    &
     &               vessel_model,   &
     &               llimiter,       &
     &               ldivertor,      &
+    &               ldivertor_vtk,  &
+    &               divertor_model, &
+    &               num_nodes,      &
+    &               num_elements,   &
     &               lflxqnt,        &
     &               mr,             &
     &               h_in,           &
@@ -114,6 +132,7 @@ SUBROUTINE readin
     &               sout,           &
     &               rout,           &
     &               zout,           &
+    &               drho,           &
     &               ntheta,         &
     &               pcros_in,       &
     &               lrmagax,        &
@@ -130,21 +149,26 @@ SUBROUTINE readin
     &               bspec
   NAMELIST /fopen/  mag_file,       &
     &               flx_file,       &
+    &               start_file,     &
     &               vessel_file,    &
+    &               divertor_file,  &
+    &               nodes_file,     &
+    &               elements_file,  &
 #ifdef POINXY
     &               xy_plot_file,   &
 #endif
 #ifdef LCOUT
     &               lc_plot_file,   &
 #endif
-    &               prof_file
+    &               prof_file,      &
+    &               vmec_file
 
   READ(5,nlinp1)
   !WRITE(6,nlinp1)
- 
+  PRINT *,1 
   READ(5,nlinp_coil_dat)
   !WRITE(6,nlinp_coil_dat)
-
+  PRINT *,2
   IF(lfile)THEN
     READ(5,fopen)
     !WRITE(6,fopen)

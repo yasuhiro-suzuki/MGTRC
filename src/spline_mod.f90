@@ -866,6 +866,9 @@ CONTAINS
     IF(ix >= nx3d - 1)THEN
       ix =  nx3d - 2
       ux =  nx3d - 1
+    ELSE IF(ix < 0)THEN
+      ix =  0
+      ux =  0
     END IF
  
     uy = (y - ys3) / h3y
@@ -873,6 +876,9 @@ CONTAINS
     IF(iy >= ny3d - 1)THEN
       iy =  ny3d - 2
       uy =  ny3d - 1
+    ELSE IF(iy < 0)THEN
+      iy =  0
+      uy =  0
     END IF
 
     uz = (z - zs3) / h3z
@@ -880,6 +886,9 @@ CONTAINS
     IF(iz >= nz3d - 1)THEN
       iz =  nz3d - 2
       uz =  nz3d - 1
+    ELSE IF(iz < 0)THEN
+      iz =  0
+      uz =  0
     END IF
 
     ux  =  ux - ix - 0.5_DP
