@@ -88,8 +88,8 @@ CONTAINS
         CALL read_vessel_2d
       CASE("3d", "3D")
         CALL read_vessel_3d
-      CASE("3d_new", "3D_new")
-        CALL read_vessel_3d_new
+      CASE("3d_old", "3D_old")
+        CALL read_vessel_3d_old
       CASE("old", "OLD")
         CALL read_vessel_old
       CASE("ana", "ANA")
@@ -103,7 +103,7 @@ CONTAINS
 
   END SUBROUTINE read_vessel
 
-  SUBROUTINE read_vessel_3d_new
+  SUBROUTINE read_vessel_3d
 
     IMPLICIT NONE
 !Local variables
@@ -141,9 +141,9 @@ CONTAINS
     END DO
 
 
-  END SUBROUTINE read_vessel_3d_new
+  END SUBROUTINE read_vessel_3d
 
-  SUBROUTINE read_vessel_3d
+  SUBROUTINE read_vessel_3d_old
 
     IMPLICIT NONE
 !Local variables
@@ -174,7 +174,7 @@ CONTAINS
     END DO
 
 
-  END SUBROUTINE read_vessel_3d
+  END SUBROUTINE read_vessel_3d_old
 
   SUBROUTINE read_vessel_old
 
